@@ -1,0 +1,510 @@
+{
+  "version": "2.0.0",
+  "styleProfile": "cartoon-tech-v2",
+  "components": {
+    "TitleCard": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "TitleCard",
+      "props": [
+        "text",
+        "style",
+        "anchor"
+      ],
+      "description": "Kinetic headline card with impact pop and underline sweep.",
+      "llm": {
+        "use": "Big kinetic word or number as the whole shot (a reveal like 'RAW', '2/3').",
+        "props": {
+          "text": "impact_reveal: ≤5 Chinese chars or ≤8 letters/digits (auto-shrinks to fit; never cut a term); headline: ≤6 chars",
+          "style": "impact_reveal|headline",
+          "anchor": "center",
+          "sub": "optional small line ≤14 chars"
+        },
+        "beats": "impact = slam (needs bass)"
+      }
+    },
+    "ColorSweep": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "ColorSweep",
+      "props": [
+        "mode",
+        "from",
+        "to"
+      ],
+      "description": "Toon swatch strip sweeping from a colour cast to neutral (white balance / colour correction).",
+      "llm": {
+        "use": "White paper under a candle; a colour-temperature slider fixes the cast on reveal.",
+        "props": {
+          "mode": "white_balance",
+          "from": "#FF9A3C",
+          "to": "#FFFFFF"
+        },
+        "topic": "camera"
+      }
+    },
+    "ParticleStream": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "canvas",
+        "remotion"
+      ],
+      "fallback2D": "ParticleStream",
+      "props": [
+        "mode",
+        "count",
+        "seed",
+        "direction"
+      ],
+      "description": "Deterministic instanced toon particles with trails (photon flow / noise / denoise).",
+      "llm": {
+        "use": "Background particles (depth 0).",
+        "props": {
+          "mode": "photons (light rain) | converge (flies into the centre)",
+          "count": "40-70",
+          "seed": "int"
+        }
+      }
+    },
+    "ChipReveal": {
+      "status": "implemented",
+      "layer": "B",
+      "renderers": [
+        "three",
+        "svg"
+      ],
+      "fallback2D": "ChipReveal",
+      "props": [
+        "label",
+        "bands"
+      ],
+      "description": "Hero chip object. Layer B (three.js toon) is a skeleton; 2.5D SVG fallback is implemented.",
+      "llm": {
+        "use": "HERO 3D chip slamming down (renderer \"three\"): ONLY when the protagonist is a chip/processor.",
+        "props": {
+          "label": "\"\""
+        },
+        "beats": "impact = slam",
+        "topic": "camera"
+      }
+    },
+    "RawFramePlate": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "RawFramePlate",
+      "props": [
+        "mode(photo|guess|mono|bayer|demosaic)",
+        "cells",
+        "y"
+      ],
+      "description": "Pixel plate: photo, guess (photo flips to one-colour tiles + ?), mono, raw (ISP switch off) (colour-blind sensor), bayer (RGGB filters), demosaic (neighbour interpolation).",
+      "llm": {
+        "use": "8×8 pixel plate of the sunset photo.",
+        "props": {
+          "mode": "see modes",
+          "cells": 8,
+          "y": "≈1000"
+        },
+        "modes": {
+          "photo": "the finished photo",
+          "guess": "photo flips into one-colour tiles with '?'",
+          "mono": "grey intensity only",
+          "raw": "ISP switch flips off, photo fades to dark grey-green RAW",
+          "bayer": "R/G/B Bayer tiles + RGGB legend on reveal",
+          "demosaic": "tiles fill in to the photo, arrows into a pixel"
+        },
+        "topic": "camera"
+      }
+    },
+    "ExposureMerge": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "ExposureMerge",
+      "props": [],
+      "description": "Short and long exposure cards fusing into one tone-mapped card.",
+      "llm": {
+        "use": "Dark card + overexposed card merge into one 'both readable' card on reveal.",
+        "props": {},
+        "topic": "camera"
+      }
+    },
+    "PipelineFlythrough": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "PipelineFlythrough",
+      "props": [
+        "stages",
+        "focus",
+        "runDelay",
+        "error"
+      ],
+      "description": "Stage boxes on a conveyor with camera flythrough; focus highlights one stage.",
+      "llm": {
+        "use": "Vertical stack of 2-5 stage capsules lighting in order; a photo token travels down.",
+        "props": {
+          "stages": "list of 2-5 names (≤6 chars); camera-pipeline names get icons, others get step numbers",
+          "focus": "-1 = light all in order",
+          "top": "y of first capsule (≥520 if there is a top headline)",
+          "budget": "bool progress bar",
+          "perStage": "seconds per stage, may be {\"spanFrac\": f}",
+          "runDelay": "seconds before lighting starts",
+          "error": "bool: a red error blob grows at each stage, '!' on impact",
+          "token": "bool: a photo card travels down the stages (default true only for camera-pipeline stages)"
+        }
+      }
+    },
+    "LensArray": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "LensArray",
+      "props": [
+        "count"
+      ],
+      "description": "Phone camera bump with N toon lenses popping in.",
+      "llm": {
+        "use": "Phone camera bump with N lenses.",
+        "props": {
+          "count": "2-4",
+          "y": "≈1040"
+        },
+        "beats": "reveal = highlight sweep; exit = all lenses go dark + red crosses",
+        "topic": "camera"
+      }
+    },
+    "LensSpread": {
+      "status": "planned",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "LensArray",
+      "props": [],
+      "description": "Planned (Phase 4)."
+    },
+    "MultiFrameFusion": {
+      "status": "planned",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "ExposureMerge",
+      "props": [],
+      "description": "Planned (Phase 4, video #2)."
+    },
+    "DiagramBox": {
+      "status": "planned",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "TitleCard",
+      "props": [],
+      "description": "Diagram primitive, planned."
+    },
+    "PhotonGuide": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "PhotonGuide",
+      "props": [
+        "keys[[t,x,y,scale]]",
+        "moods[[t,happy|surprised|worried]]",
+        "look[dx,dy]"
+      ],
+      "description": "Mascot '小光': a photon with eyes; blinks, bobs, squash-and-stretch along velocity, sparkle trail.",
+      "llm": {
+        "use": "Mascot 小光 of the camera/ISP series (a photon with eyes), depth 2. Never use when the script says no mascot (无吉祥物).",
+        "props": {
+          "keys": "[[frac, x, y, scale], ...] path over the shot",
+          "moods": "[[frac, happy|worried|surprised]]",
+          "look": "[dx, dy] optional"
+        },
+        "topic": "camera"
+      }
+    },
+    "EyeBlinkFrames": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg",
+        "remotion"
+      ],
+      "fallback2D": "EyeBlinkFrames",
+      "props": [
+        "frames"
+      ],
+      "description": "One human blink vs. the 33 ms frames that fit inside it.",
+      "llm": {
+        "use": "An eye blinks while numbered frame cards pop (time scale comparisons).",
+        "props": {
+          "frames": 12
+        }
+      }
+    },
+    "PhotonWell": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "PhotonWell",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "Pixel wells counting photons: count / gray / filter (Bayer caps).",
+      "llm": {
+        "use": "Four glass pixel wells catching photons.",
+        "props": {
+          "mode": "see modes",
+          "y": "≈880"
+        },
+        "modes": {
+          "count": "photons land, liquid rises, counters tick",
+          "gray": "photons lose colour, '?' over wells",
+          "filter": "R/G/G/B caps drop on, wrong-colour photons bounce"
+        },
+        "topic": "camera"
+      }
+    },
+    "NeighborGrid": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "NeighborGrid",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "3x3 Bayer neighbourhood: ask (G? B?) / average (neighbour values + formula).",
+      "llm": {
+        "use": "3×3 Bayer neighbourhood around a red pixel.",
+        "props": {
+          "mode": "ask ('G? B?') | average (neighbour values fly in, formula on impact)",
+          "y": "≈960"
+        },
+        "topic": "camera"
+      }
+    },
+    "MoireFence": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "MoireFence",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "Fine fence over the sunset: rainbow false colour (artifact) / edge-directed sweep (fix).",
+      "llm": {
+        "use": "Fine fence over the sunset.",
+        "props": {
+          "mode": "artifact (rainbow false colour, red ✗ on impact) | fix (arrow sweeps them away, ✓)",
+          "y": "≈980"
+        },
+        "topic": "camera"
+      }
+    },
+    "PhotonBars": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "PhotonBars",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "Photon arrivals into six pixel columns: stream / day / night (cuts to a noisy night city).",
+      "llm": {
+        "use": "Photons falling into six pixel columns.",
+        "props": {
+          "mode": "stream (beam breaks into grains on reveal) | day (dense, columns equal) | night (sparse, columns jump; cuts to a noisy night city on impact)"
+        },
+        "topic": "camera"
+      }
+    },
+    "BurstStack": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "BurstStack",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "Night burst: smear / align / stack / milestones / shutter; noise ~ 1/sqrt(N).",
+      "llm": {
+        "use": "Night-photo burst stacking.",
+        "props": {
+          "mode": "smear (squeegee wipes detail away, ✗) | align (offset frames register ×1→×6) | stack (×6→×12) | milestones (×1→×16 with 1/2, 1/4 marks) | shutter (ring 1/16→16/16, ✓)"
+        },
+        "topic": "camera"
+      }
+    },
+    "WBCompare": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "WBCompare",
+      "props": [
+        "mode",
+        "y"
+      ],
+      "description": "White balance panels: temps / brain / wrong / night (learned AWB).",
+      "llm": {
+        "use": "White-balance panels.",
+        "props": {
+          "mode": "temps (candle-orange vs cloudy-blue paper) | brain (brain fixes, sensor doesn't, ✗) | wrong (yellow face, blue snow, ✗) | night (three coloured lamps, AI icon, paper turns white ✓)"
+        },
+        "topic": "camera"
+      }
+    },
+    "ToneLadder": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "ToneLadder",
+      "props": [
+        "mode"
+      ],
+      "description": "Brightness levels: squeeze (thousands -> 256) / spacing (even vs eye-weighted).",
+      "llm": {
+        "use": "Brightness levels.",
+        "props": {
+          "mode": "squeeze (thousands of levels into a 256 box, '怎么压？') | spacing (even vs eye-weighted steps)"
+        },
+        "topic": "camera"
+      }
+    },
+    "ToneCard": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "ToneCard",
+      "props": [
+        "mode"
+      ],
+      "description": "Landscape tone mapping: crush (dead white / black) / lift (shoot dark, lift shadows).",
+      "llm": {
+        "use": "Landscape tone mapping.",
+        "props": {
+          "mode": "crush (sky dead white, shadows dead black) | lift (shoot dark, lift shadows ✓)"
+        },
+        "topic": "camera"
+      }
+    },
+    "ZoomSwitch": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "ZoomSwitch",
+      "props": [
+        "mode"
+      ],
+      "description": "Multi-camera colour: grid (four lens tints) / zoom (0.6x->5x, colour jump on hand-over).",
+      "llm": {
+        "use": "Multi-camera colour.",
+        "props": {
+          "mode": "grid (same scene, four lens tints) | zoom (slider 0.6×→5×, '颜色跳了！' at hand-overs)"
+        },
+        "topic": "camera"
+      }
+    },
+    "TripleISP": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "TripleISP",
+      "props": [],
+      "description": "Three always-on ISP lanes feeding previews (instant zoom switch).",
+      "llm": {
+        "use": "Three always-on ISP lanes feeding previews.",
+        "props": {},
+        "topic": "camera"
+      }
+    },
+    "InfoCards": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "InfoCards",
+      "llm": {
+        "use": "GENERIC: 1-6 cards (list, steps, comparison, pros/cons). Use whenever no topic component fits.",
+        "props": {
+          "items": "[{\"title\": ≤10 chars, \"value\"?: short number/text, \"mark\"?: \"ok\"|\"bad\", \"color\"?: \"p1|p2|accent|red|green\"}]",
+          "layout": "column | row (≤3 items) | grid",
+          "highlight": "index lit on impact, -1 none",
+          "y": "centre ≈960"
+        },
+        "beats": "entrance = cards pop in order; reveal = values light up; impact = highlight + marks"
+      }
+    },
+    "StatBars": {
+      "status": "implemented",
+      "layer": "A",
+      "renderers": [
+        "svg"
+      ],
+      "fallback2D": "StatBars",
+      "llm": {
+        "use": "GENERIC: 2-6 bars comparing numbers.",
+        "props": {
+          "bars": "[{\"label\": ≤6 chars, \"value\": number, \"display\"?: text}]",
+          "unit": "suffix",
+          "highlight": "index",
+          "scale": "optional max"
+        },
+        "beats": "reveal = bars grow; impact = highlight pops"
+      }
+    }
+  }
+}

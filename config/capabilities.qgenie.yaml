@@ -1,0 +1,39 @@
+# Host profile: qgenie gateway (OpenAI-compatible /v1/chat/completions). Model IDs come from .env only.
+# One gateway, three families -> G2 cross-family review stays meaningful.
+providers:
+  qgenie_claude:
+    type: openai_compat
+    max_tokens: 32000
+    family: claude
+    base_url: ${MB_QGENIE_BASE_URL:-REPLACE_ME}
+    api_key: ${QGENIE_API_KEY:-}
+  qgenie_gemini:
+    type: openai_compat
+    max_tokens: 32000
+    family: gemini
+    base_url: ${MB_QGENIE_BASE_URL:-REPLACE_ME}
+    api_key: ${QGENIE_API_KEY:-}
+  qgenie_gpt:
+    type: openai_compat
+    max_tokens: 32000
+    family: gpt
+    base_url: ${MB_QGENIE_BASE_URL:-REPLACE_ME}
+    api_key: ${QGENIE_API_KEY:-}
+  stub:
+    family: stub
+
+capabilities:
+  fast_text:
+    candidates: ["qgenie_gpt:${MB_FAST_TEXT_MODEL:-}", "qgenie_gemini:${MB_FAST_TEXT_MODEL_ALT:-}", "stub:echo"]
+    timeout_s: 60
+  deep_reasoning:
+    candidates: ["qgenie_claude:${MB_DEEP_MODEL:-}", "qgenie_gemini:${MB_DEEP_MODEL_ALT:-}", "qgenie_gpt:${MB_DEEP_MODEL_ALT2:-}", "stub:echo"]
+    timeout_s: 600
+  code_generation:
+    candidates: ["qgenie_gemini:${MB_CODE_MODEL:-}", "qgenie_claude:${MB_CODE_MODEL_ALT:-}", "stub:echo"]
+    timeout_s: 240
+  vision_review:
+    candidates: ["qgenie_claude:${MB_VISION_MODEL:-}", "qgenie_gemini:${MB_VISION_MODEL_ALT:-}", "qgenie_gpt:${MB_VISION_MODEL_ALT2:-}", "stub:echo"]
+    timeout_s: 180
+    cross_family: true
+ban: []

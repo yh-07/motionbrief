@@ -1,0 +1,44 @@
+{
+  "BalanceScale": {
+    "use": "A cartoon balance scale that shows one side outweighing the other: comparisons, trade-offs, cost vs benefit, which option is heavier or more important. Labels are short pills on the pans. Use heavy=\"none\" when the two sides are equal.",
+    "props": {
+      "left": "label of the left pan, <=8 chars, e.g. \"智力测验 · 下棋\"",
+      "right": "label of the right pan, <=8 chars, e.g. \"看清 · 抓握 · 走路\"",
+      "heavy": "which side is heavier: \"right\" (default) | \"left\" | \"none\" (level beam, only breathes)",
+      "y": "vertical centre of the pivot area, default 980"
+    },
+    "beats": "entrance: post, base and beam appear, pans pop in with their labels. reveal: the beam tilts about 14 degrees with a bouncy back-out so the heavy side drops and the light pan lifts. impact: a small dust puff under the heavy pan.",
+    "topic": "general"
+  },
+  "Timeline": {
+    "use": "A long horizontal time bar split into coloured bands (eras, stages, phases, periods) with labels above, end labels at both ends, an optional marker event, and an optional focus band that is highlighted. Use for history, evolution, development stages, project phases.",
+    "props": {
+      "bands": "list of {label, from, to, color?}; from/to are fractions 0..1 of the bar (e.g. 0 to 0.45); color is \"accent\" (amber), \"p1\", \"p2\", or a hex colour (default alternates violet and teal). Example: [{\"label\":\"感知 + 运动\",\"from\":0,\"to\":1},{\"label\":\"抽象推理\",\"from\":0.97,\"to\":1,\"color\":\"accent\"}]",
+      "start": "left end label, e.g. \"远古生物\"",
+      "end": "right end label, e.g. \"人类\"",
+      "marker": "optional {at: fraction 0..1, label} for one event pinned on the bar, e.g. {\"at\":0.5,\"label\":\"恐龙灭绝\"}",
+      "focus": "optional band index (0-based) to highlight on impact, e.g. 1"
+    },
+    "beats": "entrance: the bar draws from left to right over about 1.2 s, bands show as ghosts. reveal: bands fill in with their colours; labels stack upward when they would collide. impact: the focus band glows and its label pops out as a pill with a pointer. A light sweeps along the bar after the reveal.",
+    "topic": "general"
+  },
+  "LoopCycle": {
+    "use": "A cycle of 3-5 stages on a ring joined by curved arrows, with a glowing token that travels round and round: feedback loops, iterative processes, methods, life cycles, the scientific method, learning loops.",
+    "props": {
+      "stages": "list of 3-5 stage labels, each <=4 chars, in clockwise order from the top, e.g. [\"观察\",\"假设\",\"实验\",\"结论\"]",
+      "centre": "optional short label shown in the middle of the ring, e.g. \"科学方法\""
+    },
+    "beats": "entrance: nodes pop in one after another and the arrows follow. reveal: a glowing token starts travelling round the loop (2.4 s per lap, endless) and each node lights up as the token passes. impact: the whole ring pulses once.",
+    "topic": "general"
+  },
+  "ChatWindow": {
+    "use": "A phone-style chat panel with message bubbles appearing one by one (user on the right, AI on the left, typing dots before each AI reply). Use to show a question and an answer, a tutor or assistant walking through steps, or a plan being given. Optional scrolling code/formula lines and numbered plan rows.",
+    "props": {
+      "messages": "list of {role: \"user\" | \"ai\", text} in order, text <=24 chars each, e.g. [{\"role\":\"user\",\"text\":\"怎么求积分?\"},{\"role\":\"ai\",\"text\":\"先看幂函数的规律\"}]. Works best with 2-6 messages.",
+      "code": "false (default) | true (scrolling default code lines) | list of strings to show your own code/formula lines, e.g. [\"def f(x):\", \"return x * 2\"]",
+      "plan": "bool (default false): AI messages render as numbered plan rows (\"1 找海绵\", \"2 ...\") instead of bubbles; user messages stay as bubbles"
+    },
+    "beats": "entrance: the phone card is up at once; bubbles appear one by one about every 0.45 s, with typing dots before each AI bubble. reveal: the latest bubble glows. impact: the last bubble pops.",
+    "topic": "general"
+  }
+}

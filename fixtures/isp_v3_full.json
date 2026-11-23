@@ -1,0 +1,4226 @@
+{
+  "irVersion": "1.2.0",
+  "video": {
+    "id": "isp_v3_full",
+    "title": "你手机的四个摄像头，没有一个会拍照：讲清 ISP",
+    "aspect": "9:16",
+    "w": 1080,
+    "h": 1920,
+    "fps": 30,
+    "visualIP": "cartoon-tech-v2",
+    "durationTier": "extended",
+    "productionLevel": "hero",
+    "visualStyle": "neon"
+  },
+  "palette": {
+    "primary": [
+      "#7C5CFF",
+      "#22D3B6"
+    ],
+    "accent": "#FFB547"
+  },
+  "scenes": [
+    {
+      "id": "s01",
+      "tStart": 0.0,
+      "tEnd": 4.667,
+      "role": "hook",
+      "narration": "你手机背后有四个摄像头。可没有一个，拍得出照片。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor",
+        "https://en.wikipedia.org/wiki/Camera_phone"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.05,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "拍不出照片？",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 2.8
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "rain",
+          "component": "ParticleStream",
+          "renderer": "svg",
+          "depth": 0,
+          "props": {
+            "mode": "photons",
+            "count": 40,
+            "seed": 1
+          }
+        },
+        {
+          "id": "lens",
+          "component": "LensArray",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "count": 4,
+            "y": 1040
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "lens",
+          "grammar": "entrance",
+          "at": 0.0
+        },
+        {
+          "target": "lens",
+          "grammar": "reveal",
+          "at": 0.84
+        },
+        {
+          "target": "lens",
+          "grammar": "exit",
+          "at": 2.333
+        },
+        {
+          "target": "lens",
+          "grammar": "impact",
+          "at": 2.8
+        },
+        {
+          "target": "拍不出照片？",
+          "grammar": "impact",
+          "at": 2.8
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 0.0
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 0.84
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 2.8
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s02",
+      "tStart": 4.667,
+      "tEnd": 9.2,
+      "role": "hook",
+      "narration": "你相册里每一张照片，都不是拍下来的，是算出来的。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Computational_photography"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "是算出来的",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 7.568
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "guess",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 4.667
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 5.574
+        },
+        {
+          "target": "plate",
+          "grammar": "impact",
+          "at": 7.568
+        },
+        {
+          "target": "是算出来的",
+          "grammar": "impact",
+          "at": 7.568
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 4.667
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 5.574
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 7.568
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s03",
+      "tStart": 9.2,
+      "tEnd": 14.833,
+      "role": "context",
+      "narration": "不信？我们把手机的处理全部关掉，直接看传感器交出来的东西。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Raw_image_format"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "不信？",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 12.298
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "raw",
+            "cells": 8,
+            "y": 1040
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 9.2
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 11.735
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 9.2
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 11.735
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s04",
+      "tStart": 14.833,
+      "tEnd": 18.967,
+      "role": "context",
+      "narration": "就是这个：又暗，又灰，还发绿，凑近一看，全是格子。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Raw_image_format",
+        "https://en.wikipedia.org/wiki/Bayer_filter"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.14,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "暗 · 灰 · 发绿",
+          "style": "label",
+          "safeArea": "top",
+          "at": 17.107
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "bayer",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 14.833
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 17.107
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 14.833
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 15.081
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 17.107
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s05",
+      "tStart": 18.967,
+      "tEnd": 21.867,
+      "role": "context",
+      "narration": "这叫RAW，传感器最原始的读数。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Raw_image_format"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [],
+      "visualObjects": [
+        {
+          "id": "raw",
+          "component": "TitleCard",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "text": "RAW",
+            "style": "impact_reveal",
+            "anchor": "center",
+            "sub": "传感器最原始的读数"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "raw",
+          "grammar": "entrance",
+          "at": 18.967
+        },
+        {
+          "target": "raw",
+          "grammar": "impact",
+          "at": 19.402
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 18.967
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 19.402
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s06",
+      "tStart": 21.867,
+      "tEnd": 25.567,
+      "role": "context",
+      "narration": "为什么是这样？因为传感器是个色盲。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_sensor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "色盲",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 24.161
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "rain",
+          "component": "ParticleStream",
+          "renderer": "svg",
+          "depth": 0,
+          "props": {
+            "mode": "photons",
+            "count": 40,
+            "seed": 1
+          }
+        },
+        {
+          "id": "guide",
+          "component": "PhotonGuide",
+          "renderer": "svg",
+          "depth": 2,
+          "props": {
+            "keys": [
+              [
+                21.867,
+                540,
+                160,
+                1.0
+              ],
+              [
+                22.977,
+                540,
+                1000,
+                1.5
+              ],
+              [
+                25.567,
+                540,
+                980,
+                1.5
+              ]
+            ],
+            "moods": [
+              [
+                21.867,
+                "happy"
+              ],
+              [
+                23.902,
+                "worried"
+              ]
+            ]
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "guide",
+          "grammar": "entrance",
+          "at": 21.867
+        },
+        {
+          "target": "guide",
+          "grammar": "reveal",
+          "at": 22.977
+        },
+        {
+          "target": "guide",
+          "grammar": "impact",
+          "at": 24.161
+        },
+        {
+          "target": "色盲",
+          "grammar": "impact",
+          "at": 24.161
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 21.867
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 22.977
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 24.161
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s07",
+      "tStart": 25.567,
+      "tEnd": 31.8,
+      "role": "mechanism",
+      "narration": "每个像素就是一口小井，光子掉进来，变成电荷，它只会数：掉进来多少个。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_sensor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "只会数光子",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 30.678
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wells",
+          "component": "PhotonWell",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "count",
+            "y": 880
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wells",
+          "grammar": "entrance",
+          "at": 25.567
+        },
+        {
+          "target": "wells",
+          "grammar": "reveal",
+          "at": 28.372
+        },
+        {
+          "target": "wells",
+          "grammar": "impact",
+          "at": 30.678
+        },
+        {
+          "target": "只会数光子",
+          "grammar": "impact",
+          "at": 30.678
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 25.567
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 25.941
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 28.372
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 30.678
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s08",
+      "tStart": 31.8,
+      "tEnd": 34.9,
+      "role": "mechanism",
+      "narration": "至于光是什么颜色，它完全不知道。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_sensor",
+        "https://en.wikipedia.org/wiki/Bayer_filter"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "不知道颜色",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 33.97
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wells",
+          "component": "PhotonWell",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "gray",
+            "y": 880
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wells",
+          "grammar": "entrance",
+          "at": 31.8
+        },
+        {
+          "target": "wells",
+          "grammar": "reveal",
+          "at": 32.885
+        },
+        {
+          "target": "wells",
+          "grammar": "impact",
+          "at": 33.97
+        },
+        {
+          "target": "不知道颜色",
+          "grammar": "impact",
+          "at": 33.97
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 31.8
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 31.986
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 32.885
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 33.97
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s09",
+      "tStart": 34.9,
+      "tEnd": 41.333,
+      "role": "mechanism",
+      "narration": "工程师的办法是，给每个像素戴上一片彩色眼镜：红、绿、蓝，每个像素只能戴一种。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Bayer_filter"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "每个像素 只戴一种",
+          "style": "label",
+          "safeArea": "top",
+          "at": 40.046
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wells",
+          "component": "PhotonWell",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "filter",
+            "y": 880
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wells",
+          "grammar": "entrance",
+          "at": 34.9
+        },
+        {
+          "target": "wells",
+          "grammar": "reveal",
+          "at": 36.83
+        },
+        {
+          "target": "wells",
+          "grammar": "impact",
+          "at": 40.046
+        },
+        {
+          "target": "每个像素 只戴一种",
+          "grammar": "impact",
+          "at": 40.046
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 34.9
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 35.286
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 36.83
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 40.046
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s10",
+      "tStart": 41.333,
+      "tEnd": 45.033,
+      "role": "mechanism",
+      "narration": "而且绿色占了一半，因为人眼对绿光最敏感。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Bayer_filter"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "绿色占一半",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 43.627
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "bayer",
+            "cells": 8,
+            "y": 900
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 41.333
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 42.073
+        },
+        {
+          "target": "plate",
+          "grammar": "impact",
+          "at": 43.627
+        },
+        {
+          "target": "绿色占一半",
+          "grammar": "impact",
+          "at": 43.627
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 41.333
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 42.073
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 43.627
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s11",
+      "tStart": 45.033,
+      "tEnd": 50.9,
+      "role": "reveal",
+      "narration": "这就意味着：每个像素都只知道一种颜色，另外两种，它根本没见过。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Bayer_filter",
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "只知道 1 种颜色",
+          "style": "label",
+          "safeArea": "top",
+          "at": 48.26
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "guess",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 45.033
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 45.737
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 45.033
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 45.385
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 45.737
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s12",
+      "tStart": 50.9,
+      "tEnd": 54.433,
+      "role": "reveal",
+      "narration": "你照片里三分之二的颜色，是算出来的。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [],
+      "visualObjects": [
+        {
+          "id": "big",
+          "component": "TitleCard",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "text": "2/3",
+            "style": "impact_reveal",
+            "anchor": "center",
+            "sub": "的颜色 · 是算出来的"
+          }
+        },
+        {
+          "id": "guide",
+          "component": "PhotonGuide",
+          "renderer": "svg",
+          "depth": 2,
+          "props": {
+            "keys": [
+              [
+                50.9,
+                260,
+                1500,
+                0.9
+              ],
+              [
+                54.433,
+                280,
+                1480,
+                0.9
+              ]
+            ],
+            "moods": [
+              [
+                50.9,
+                "surprised"
+              ]
+            ],
+            "look": [
+              1,
+              -1
+            ]
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "big",
+          "grammar": "entrance",
+          "at": 50.9
+        },
+        {
+          "target": "big",
+          "grammar": "impact",
+          "at": 51.324
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 50.9
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 51.324
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s13",
+      "tStart": 54.433,
+      "tEnd": 60.167,
+      "role": "reveal",
+      "narration": "负责算的，是手机芯片里一块专用电路，叫ISP，图像信号处理器。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_3d",
+      "renderQuality": "hero",
+      "cameraProjection": "perspective",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.07,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "ISP",
+          "style": "impact_reveal",
+          "safeArea": "center",
+          "at": 57.587
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "stream",
+          "component": "ParticleStream",
+          "renderer": "svg",
+          "depth": 0,
+          "props": {
+            "mode": "converge",
+            "count": 70,
+            "seed": 13
+          }
+        },
+        {
+          "id": "chip",
+          "component": "ChipReveal",
+          "renderer": "three",
+          "depth": 1,
+          "props": {
+            "label": ""
+          },
+          "materialStyle": {
+            "type": "toon",
+            "bands": 3,
+            "gradientRamp": [
+              "#EFE6FF",
+              "#7C5CFF",
+              "#2A2350"
+            ]
+          },
+          "outline": {
+            "method": "inverted_hull",
+            "width": 0.03,
+            "color": "#1A1452"
+          },
+          "lightingPreset": "single_key_soft"
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "chip",
+          "grammar": "entrance",
+          "at": 54.72
+        },
+        {
+          "target": "chip",
+          "grammar": "reveal",
+          "at": 56.153
+        },
+        {
+          "target": "chip",
+          "grammar": "impact",
+          "at": 57.587
+        },
+        {
+          "target": "ISP",
+          "grammar": "impact",
+          "at": 57.587
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 54.433
+        },
+        {
+          "sfx": "riser",
+          "at": 54.892
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 57.587
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": true
+      }
+    },
+    {
+      "id": "s14",
+      "tStart": 60.167,
+      "tEnd": 63.9,
+      "role": "context",
+      "narration": "它要把这堆格子变成照片，得连闯四关。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "连闯四关",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 63.153
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "pipe",
+          "component": "PipelineFlythrough",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "stages": [
+              "去马赛克",
+              "降噪",
+              "白平衡",
+              "色调映射"
+            ],
+            "focus": -1,
+            "top": 560,
+            "budget": false,
+            "perStage": 0.5
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "pipe",
+          "grammar": "entrance",
+          "at": 60.167
+        },
+        {
+          "target": "pipe",
+          "grammar": "reveal",
+          "at": 60.914
+        },
+        {
+          "target": "pipe",
+          "grammar": "impact",
+          "at": 63.153
+        },
+        {
+          "target": "连闯四关",
+          "grammar": "impact",
+          "at": 63.153
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 60.167
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 60.914
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 63.153
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s15",
+      "tStart": 63.9,
+      "tEnd": 68.633,
+      "role": "context",
+      "narration": "而且顺序不能乱：前一关留下的错，后面会被一路放大。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "错误会一路放大",
+          "style": "label",
+          "safeArea": "top",
+          "at": 67.781
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "pipe",
+          "component": "PipelineFlythrough",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "stages": [
+              "去马赛克",
+              "降噪",
+              "白平衡",
+              "色调映射"
+            ],
+            "focus": -1,
+            "top": 580,
+            "budget": false,
+            "perStage": 0.62,
+            "error": true
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "pipe",
+          "grammar": "entrance",
+          "at": 63.9
+        },
+        {
+          "target": "pipe",
+          "grammar": "reveal",
+          "at": 65.083
+        },
+        {
+          "target": "pipe",
+          "grammar": "impact",
+          "at": 67.781
+        },
+        {
+          "target": "错误会一路放大",
+          "grammar": "impact",
+          "at": 67.781
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 63.9
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 64.184
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 65.083
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 67.781
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s16",
+      "tStart": 68.633,
+      "tEnd": 73.333,
+      "role": "mechanism",
+      "narration": "第一关，去马赛克。一个红色像素缺绿和蓝，怎么办？",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "① 去马赛克",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 71.218
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "nb",
+          "component": "NeighborGrid",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "ask",
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "nb",
+          "grammar": "entrance",
+          "at": 68.633
+        },
+        {
+          "target": "nb",
+          "grammar": "reveal",
+          "at": 70.983
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 68.633
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 68.915
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s17",
+      "tStart": 73.333,
+      "tEnd": 78.3,
+      "role": "mechanism",
+      "narration": "看邻居。上下左右都是绿的，取个平均，就猜出了绿色。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "看邻居 · 取平均",
+          "style": "label",
+          "safeArea": "top",
+          "at": 77.058
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "nb",
+          "component": "NeighborGrid",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "average",
+            "y": 920
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "nb",
+          "grammar": "entrance",
+          "at": 73.333
+        },
+        {
+          "target": "nb",
+          "grammar": "reveal",
+          "at": 74.823
+        },
+        {
+          "target": "nb",
+          "grammar": "impact",
+          "at": 77.058
+        },
+        {
+          "target": "看邻居 · 取平均",
+          "grammar": "impact",
+          "at": 77.058
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 73.333
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 73.631
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 74.823
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 77.058
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s18",
+      "tStart": 78.3,
+      "tEnd": 81.1,
+      "role": "mechanism",
+      "narration": "平坦的地方，这招很灵。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "平坦处 · 很灵",
+          "style": "label",
+          "safeArea": "top",
+          "at": 79.84
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "demosaic",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 78.3
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 78.72
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 78.3
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 78.468
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 78.72
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s19",
+      "tStart": 81.1,
+      "tEnd": 88.367,
+      "role": "mechanism",
+      "narration": "可一遇到栅栏、衬衫格子这种又细又密的纹理，邻居就会骗你，画面上冒出一道道彩虹纹。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing",
+        "https://en.wikipedia.org/wiki/Moiré_pattern"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "彩虹纹",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 87.059
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "fence",
+          "component": "MoireFence",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "artifact",
+            "y": 980
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "fence",
+          "grammar": "entrance",
+          "at": 81.1
+        },
+        {
+          "target": "fence",
+          "grammar": "reveal",
+          "at": 85.097
+        },
+        {
+          "target": "fence",
+          "grammar": "impact",
+          "at": 87.059
+        },
+        {
+          "target": "彩虹纹",
+          "grammar": "impact",
+          "at": 87.059
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 81.1
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 85.097
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 87.059
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s20",
+      "tStart": 88.367,
+      "tEnd": 93.567,
+      "role": "mechanism",
+      "narration": "所以好的算法，得先判断边缘朝哪个方向，再顺着边去猜。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Demosaicing"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "顺着边缘猜",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 92.787
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "fence",
+          "component": "MoireFence",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "fix",
+            "y": 980
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "fence",
+          "grammar": "entrance",
+          "at": 88.367
+        },
+        {
+          "target": "fence",
+          "grammar": "reveal",
+          "at": 89.667
+        },
+        {
+          "target": "fence",
+          "grammar": "impact",
+          "at": 92.787
+        },
+        {
+          "target": "顺着边缘猜",
+          "grammar": "impact",
+          "at": 92.787
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 88.367
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 88.679
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 89.667
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 92.787
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s21",
+      "tStart": 93.567,
+      "tEnd": 98.833,
+      "role": "mechanism",
+      "narration": "第二关，降噪。光不是一股水流，而是一粒一粒随机掉下来的。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Shot_noise"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "② 降噪",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 96.463
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "bars",
+          "component": "PhotonBars",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "stream"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "bars",
+          "grammar": "entrance",
+          "at": 93.567
+        },
+        {
+          "target": "bars",
+          "grammar": "reveal",
+          "at": 96.2
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 93.567
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 93.883
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 96.2
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s22",
+      "tStart": 98.833,
+      "tEnd": 102.167,
+      "role": "mechanism",
+      "narration": "白天光子多，这点随机性看不出来。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Shot_noise"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "白天：光子多",
+          "style": "label",
+          "safeArea": "top",
+          "at": 100.667
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "bars",
+          "component": "PhotonBars",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "day"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "bars",
+          "grammar": "entrance",
+          "at": 98.833
+        },
+        {
+          "target": "bars",
+          "grammar": "reveal",
+          "at": 100.5
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 98.833
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 99.033
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 100.5
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s23",
+      "tStart": 102.167,
+      "tEnd": 109.433,
+      "role": "mechanism",
+      "narration": "到了夜里，每个像素只接到很少的光子，多一个少一个就是明显的差别，画面上全是彩色噪点。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Shot_noise",
+        "https://en.wikipedia.org/wiki/Image_noise"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "满屏噪点",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 107.399
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "bars",
+          "component": "PhotonBars",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "night"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "bars",
+          "grammar": "entrance",
+          "at": 102.167
+        },
+        {
+          "target": "bars",
+          "grammar": "reveal",
+          "at": 104.347
+        },
+        {
+          "target": "bars",
+          "grammar": "impact",
+          "at": 107.399
+        },
+        {
+          "target": "满屏噪点",
+          "grammar": "impact",
+          "at": 107.399
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 102.167
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 104.347
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 107.399
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s24",
+      "tStart": 109.433,
+      "tEnd": 112.233,
+      "role": "mechanism",
+      "narration": "硬抹？细节一起被抹掉。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Noise_reduction"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "细节没了",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 111.673
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "burst",
+          "component": "BurstStack",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "smear"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "burst",
+          "grammar": "entrance",
+          "at": 109.433
+        },
+        {
+          "target": "burst",
+          "grammar": "reveal",
+          "at": 109.937
+        },
+        {
+          "target": "burst",
+          "grammar": "impact",
+          "at": 111.673
+        },
+        {
+          "target": "细节没了",
+          "grammar": "impact",
+          "at": 111.673
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 109.433
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 109.937
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 111.673
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s25",
+      "tStart": 112.233,
+      "tEnd": 116.833,
+      "role": "mechanism",
+      "narration": "手机的办法是：连拍一串，逐张对齐，再叠在一起。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Computational_photography"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "连拍 · 对齐 · 叠加",
+          "style": "label",
+          "safeArea": "top",
+          "at": 114.763
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "burst",
+          "component": "BurstStack",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "align"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "burst",
+          "grammar": "entrance",
+          "at": 112.233
+        },
+        {
+          "target": "burst",
+          "grammar": "reveal",
+          "at": 112.923
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 112.233
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 112.509
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 112.923
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s26",
+      "tStart": 116.833,
+      "tEnd": 121.333,
+      "role": "mechanism",
+      "narration": "随机的噪点会互相抵消，真实的画面会越叠越清楚。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Shot_noise"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "噪点互相抵消",
+          "style": "label",
+          "safeArea": "top",
+          "at": 120.658
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "burst",
+          "component": "BurstStack",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "stack"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "burst",
+          "grammar": "entrance",
+          "at": 116.833
+        },
+        {
+          "target": "burst",
+          "grammar": "reveal",
+          "at": 117.373
+        },
+        {
+          "target": "burst",
+          "grammar": "impact",
+          "at": 120.658
+        },
+        {
+          "target": "噪点互相抵消",
+          "grammar": "impact",
+          "at": 120.658
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 116.833
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 117.103
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 117.373
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 120.658
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s27",
+      "tStart": 121.333,
+      "tEnd": 125.367,
+      "role": "payoff",
+      "narration": "叠四张，噪点降一半；叠十六张，降到四分之一。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Shot_noise"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "16 张 → 1/4",
+          "style": "label",
+          "safeArea": "top",
+          "at": 124.762
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "burst",
+          "component": "BurstStack",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "milestones"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "burst",
+          "grammar": "entrance",
+          "at": 121.333
+        },
+        {
+          "target": "burst",
+          "grammar": "reveal",
+          "at": 121.736
+        },
+        {
+          "target": "burst",
+          "grammar": "impact",
+          "at": 124.762
+        },
+        {
+          "target": "16 张 → 1/4",
+          "grammar": "impact",
+          "at": 124.762
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 121.333
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 121.736
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 124.762
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s28",
+      "tStart": 125.367,
+      "tEnd": 129.8,
+      "role": "payoff",
+      "narration": "你夜里按快门要稳住一两秒，就是在等它拍完这一串。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Computational_photography"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "等它拍完这一串",
+          "style": "label",
+          "safeArea": "top",
+          "at": 129.135
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "burst",
+          "component": "BurstStack",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "shutter",
+            "y": 760
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "burst",
+          "grammar": "entrance",
+          "at": 125.367
+        },
+        {
+          "target": "burst",
+          "grammar": "reveal",
+          "at": 125.899
+        },
+        {
+          "target": "burst",
+          "grammar": "impact",
+          "at": 129.135
+        },
+        {
+          "target": "等它拍完这一串",
+          "grammar": "impact",
+          "at": 129.135
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 125.367
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 125.633
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 125.899
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 129.135
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s29",
+      "tStart": 129.8,
+      "tEnd": 135.4,
+      "role": "mechanism",
+      "narration": "第三关，白平衡。同一张白纸，在烛光下是橙的，在阴天是蓝的。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Color_balance",
+        "https://en.wikipedia.org/wiki/Color_temperature"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "③ 白平衡",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 134.56
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wb",
+          "component": "WBCompare",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "temps",
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wb",
+          "grammar": "entrance",
+          "at": 129.8
+        },
+        {
+          "target": "wb",
+          "grammar": "reveal",
+          "at": 133.16
+        },
+        {
+          "target": "wb",
+          "grammar": "impact",
+          "at": 134.56
+        },
+        {
+          "target": "③ 白平衡",
+          "grammar": "impact",
+          "at": 134.56
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 129.8
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 130.136
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 133.16
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 134.56
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s30",
+      "tStart": 135.4,
+      "tEnd": 140.667,
+      "role": "mechanism",
+      "narration": "你的大脑会自动纠正，你永远觉得它是白的。可传感器不会。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Color_constancy"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "大脑会自动纠正",
+          "style": "label",
+          "safeArea": "top",
+          "at": 139.508
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wb",
+          "component": "WBCompare",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "brain",
+            "y": 1010
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wb",
+          "grammar": "entrance",
+          "at": 135.4
+        },
+        {
+          "target": "wb",
+          "grammar": "reveal",
+          "at": 136.453
+        },
+        {
+          "target": "wb",
+          "grammar": "impact",
+          "at": 139.508
+        },
+        {
+          "target": "大脑会自动纠正",
+          "grammar": "impact",
+          "at": 139.508
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 135.4
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 135.716
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 136.453
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 139.508
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s31",
+      "tStart": 140.667,
+      "tEnd": 146.267,
+      "role": "mechanism",
+      "narration": "ISP必须从画面里猜：现在是什么光？然后把白纸改回白色。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Color_balance"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "猜出光源",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 145.427
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wb",
+          "component": "ColorSweep",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "white_balance",
+            "from": "#FF9A3C",
+            "to": "#FFFFFF"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wb",
+          "grammar": "entrance",
+          "at": 140.667
+        },
+        {
+          "target": "wb",
+          "grammar": "reveal",
+          "at": 143.187
+        },
+        {
+          "target": "wb",
+          "grammar": "impact",
+          "at": 145.427
+        },
+        {
+          "target": "猜出光源",
+          "grammar": "impact",
+          "at": 145.427
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 140.667
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 143.187
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 145.427
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s32",
+      "tStart": 146.267,
+      "tEnd": 149.067,
+      "role": "mechanism",
+      "narration": "猜错了，人脸发黄，雪地发蓝。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Color_balance"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "黄脸 · 蓝雪",
+          "style": "label",
+          "safeArea": "top",
+          "at": 148.451
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wb",
+          "component": "WBCompare",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "wrong",
+            "y": 980
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wb",
+          "grammar": "entrance",
+          "at": 146.267
+        },
+        {
+          "target": "wb",
+          "grammar": "reveal",
+          "at": 146.687
+        },
+        {
+          "target": "wb",
+          "grammar": "impact",
+          "at": 148.451
+        },
+        {
+          "target": "黄脸 · 蓝雪",
+          "grammar": "impact",
+          "at": 148.451
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 146.267
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 146.435
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 146.687
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 148.451
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s33",
+      "tStart": 149.067,
+      "tEnd": 154.667,
+      "role": "mechanism",
+      "narration": "夜里最难，因为光源五颜六色，有的手机已经开始用训练过的模型来猜。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Color_balance"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "AI 来猜光源",
+          "style": "label",
+          "safeArea": "top",
+          "at": 153.995
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "wb",
+          "component": "WBCompare",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "night",
+            "y": 1020
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "wb",
+          "grammar": "entrance",
+          "at": 149.067
+        },
+        {
+          "target": "wb",
+          "grammar": "reveal",
+          "at": 152.147
+        },
+        {
+          "target": "wb",
+          "grammar": "impact",
+          "at": 153.995
+        },
+        {
+          "target": "AI 来猜光源",
+          "grammar": "impact",
+          "at": 153.995
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 149.067
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 149.403
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 152.147
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 153.995
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s34",
+      "tStart": 154.667,
+      "tEnd": 161.767,
+      "role": "mechanism",
+      "narration": "第四关，色调映射。传感器能分出几千级亮度，可JPEG每个颜色只有二百五十六级。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Tone_mapping",
+        "https://en.wikipedia.org/wiki/Color_depth"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "④ 色调映射",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 160.702
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "tl",
+          "component": "ToneLadder",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "squeeze"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "tl",
+          "grammar": "entrance",
+          "at": 154.667
+        },
+        {
+          "target": "tl",
+          "grammar": "reveal",
+          "at": 158.217
+        },
+        {
+          "target": "tl",
+          "grammar": "impact",
+          "at": 160.702
+        },
+        {
+          "target": "④ 色调映射",
+          "grammar": "impact",
+          "at": 160.702
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 154.667
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 155.093
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 158.217
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 160.702
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s35",
+      "tStart": 161.767,
+      "tEnd": 167.9,
+      "role": "mechanism",
+      "narration": "几千级要压进二百五十六级，怎么压？平均压，暗部全黑，天空一片死白。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Tone_mapping"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "天空死白",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 166.673
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "tc",
+          "component": "ToneCard",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "crush"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "tc",
+          "grammar": "entrance",
+          "at": 161.767
+        },
+        {
+          "target": "tc",
+          "grammar": "reveal",
+          "at": 164.834
+        },
+        {
+          "target": "tc",
+          "grammar": "impact",
+          "at": 166.673
+        },
+        {
+          "target": "天空死白",
+          "grammar": "impact",
+          "at": 166.673
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 161.767
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 164.834
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 166.673
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s36",
+      "tStart": 167.9,
+      "tEnd": 173.2,
+      "role": "mechanism",
+      "narration": "人眼对暗处更敏感，所以要给暗部多分一点台阶，亮部少分一点。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Gamma_correction"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "暗部多分台阶",
+          "style": "label",
+          "safeArea": "top",
+          "at": 172.405
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "tl",
+          "component": "ToneLadder",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "spacing"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "tl",
+          "grammar": "entrance",
+          "at": 167.9
+        },
+        {
+          "target": "tl",
+          "grammar": "reveal",
+          "at": 170.02
+        },
+        {
+          "target": "tl",
+          "grammar": "impact",
+          "at": 172.405
+        },
+        {
+          "target": "暗部多分台阶",
+          "grammar": "impact",
+          "at": 172.405
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 167.9
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 168.218
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 170.02
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 172.405
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s37",
+      "tStart": 173.2,
+      "tEnd": 179.267,
+      "role": "mechanism",
+      "narration": "有的手机更聪明：拍的时候故意拍暗一点，先保住天空，再把暗处提亮。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/High-dynamic-range_imaging",
+        "https://en.wikipedia.org/wiki/Tone_mapping"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "先拍暗 · 再提亮",
+          "style": "label",
+          "safeArea": "top",
+          "at": 178.539
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "tc",
+          "component": "ToneCard",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "lift"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "tc",
+          "grammar": "entrance",
+          "at": 173.2
+        },
+        {
+          "target": "tc",
+          "grammar": "reveal",
+          "at": 176.84
+        },
+        {
+          "target": "tc",
+          "grammar": "impact",
+          "at": 178.539
+        },
+        {
+          "target": "先拍暗 · 再提亮",
+          "grammar": "impact",
+          "at": 178.539
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 173.2
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 173.564
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 176.84
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 178.539
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s38",
+      "tStart": 179.267,
+      "tEnd": 183.9,
+      "role": "payoff",
+      "narration": "这就是你照片里，天空和人脸能同时看清的原因。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Tone_mapping"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "亮暗都清楚",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 182.742
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "hdr",
+          "component": "ExposureMerge",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {}
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "hdr",
+          "grammar": "entrance",
+          "at": 179.267
+        },
+        {
+          "target": "hdr",
+          "grammar": "reveal",
+          "at": 180.657
+        },
+        {
+          "target": "hdr",
+          "grammar": "impact",
+          "at": 182.742
+        },
+        {
+          "target": "亮暗都清楚",
+          "grammar": "impact",
+          "at": 182.742
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 179.267
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 180.657
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 182.742
+        }
+      ],
+      "transitionIn": {
+        "type": "morph_fuse"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s39",
+      "tStart": 183.9,
+      "tEnd": 188.867,
+      "role": "reveal",
+      "narration": "四关闯完，还没结束。最大的难题是：你有四个摄像头。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Camera_phone"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.1,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "4 个摄像头",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 187.625
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "rain",
+          "component": "ParticleStream",
+          "renderer": "svg",
+          "depth": 0,
+          "props": {
+            "mode": "photons",
+            "count": 40,
+            "seed": 1
+          }
+        },
+        {
+          "id": "lens",
+          "component": "LensArray",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "count": 4,
+            "y": 1040
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "lens",
+          "grammar": "entrance",
+          "at": 183.9
+        },
+        {
+          "target": "lens",
+          "grammar": "reveal",
+          "at": 186.632
+        },
+        {
+          "target": "lens",
+          "grammar": "impact",
+          "at": 187.625
+        },
+        {
+          "target": "4 个摄像头",
+          "grammar": "impact",
+          "at": 187.625
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 183.9
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 186.632
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 187.625
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s40",
+      "tStart": 188.867,
+      "tEnd": 193.733,
+      "role": "mechanism",
+      "narration": "每颗镜头的传感器不一样，镜片不一样，颜色脾气也不一样。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Camera_phone"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "四颗镜头 · 四种脾气",
+          "style": "label",
+          "safeArea": "top",
+          "at": 192.857
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "zs",
+          "component": "ZoomSwitch",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "grid"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "zs",
+          "grammar": "entrance",
+          "at": 188.867
+        },
+        {
+          "target": "zs",
+          "grammar": "reveal",
+          "at": 190.813
+        },
+        {
+          "target": "zs",
+          "grammar": "impact",
+          "at": 192.857
+        },
+        {
+          "target": "四颗镜头 · 四种脾气",
+          "grammar": "impact",
+          "at": 192.857
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 188.867
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 189.159
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 190.813
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 192.857
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s41",
+      "tStart": 193.733,
+      "tEnd": 200.967,
+      "role": "mechanism",
+      "narration": "你从零点六倍拉到五倍，画面在三颗镜头之间切换，颜色要是跳一下，你立刻就会发现。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Camera_phone"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "颜色跳了",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 200.099
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "zs",
+          "component": "ZoomSwitch",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "zoom"
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "zs",
+          "grammar": "entrance",
+          "at": 193.733
+        },
+        {
+          "target": "zs",
+          "grammar": "reveal",
+          "at": 195.903
+        },
+        {
+          "target": "zs",
+          "grammar": "impact",
+          "at": 200.099
+        },
+        {
+          "target": "颜色跳了",
+          "grammar": "impact",
+          "at": 200.099
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 193.733
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 195.903
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 200.099
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s42",
+      "tStart": 200.967,
+      "tEnd": 208.967,
+      "role": "payoff",
+      "narration": "所以有的芯片干脆让三套ISP同时开着，三颗摄像头一直在后台待命，你一拉变焦，直接切过去。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "三套 ISP",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 202.567
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "tri",
+          "component": "TripleISP",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {}
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "tri",
+          "grammar": "entrance",
+          "at": 200.967
+        },
+        {
+          "target": "tri",
+          "grammar": "reveal",
+          "at": 204.167
+        },
+        {
+          "target": "tri",
+          "grammar": "impact",
+          "at": 202.567
+        },
+        {
+          "target": "三套 ISP",
+          "grammar": "impact",
+          "at": 202.567
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 200.967
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 202.567
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 204.167
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s43",
+      "tStart": 208.967,
+      "tEnd": 215.433,
+      "role": "payoff",
+      "narration": "还有时间。拍四K视频，每秒三十帧，这台流水线每秒要处理两亿多个像素。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/4K_resolution",
+        "https://en.wikipedia.org/wiki/Frame_rate"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "pan",
+        "from": 1.0,
+        "to": 1.0,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "2 亿+ 像素/秒",
+          "style": "headline",
+          "safeArea": "lower",
+          "at": 213.752
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "pipe",
+          "component": "PipelineFlythrough",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "stages": [
+              "去马赛克",
+              "降噪",
+              "白平衡",
+              "色调映射"
+            ],
+            "focus": -1,
+            "top": 380,
+            "budget": true,
+            "perStage": 0.582
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "pipe",
+          "grammar": "entrance",
+          "at": 208.967
+        },
+        {
+          "target": "pipe",
+          "grammar": "reveal",
+          "at": 210.907
+        },
+        {
+          "target": "pipe",
+          "grammar": "impact",
+          "at": 213.752
+        },
+        {
+          "target": "2 亿+ 像素/秒",
+          "grammar": "impact",
+          "at": 213.752
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 208.967
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 210.907
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 213.752
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s44",
+      "tStart": 215.433,
+      "tEnd": 219.8,
+      "role": "payoff",
+      "narration": "每一帧，只有三十三毫秒，比你眨一次眼还快好几倍。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Frame_rate",
+        "https://en.wikipedia.org/wiki/Blinking"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "33 ms",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 216.525
+        },
+        {
+          "text": "眨眼 ≈ 100–400 ms",
+          "style": "label",
+          "safeArea": "lower",
+          "at": 217.835
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "eye",
+          "component": "EyeBlinkFrames",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "frames": 12
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "eye",
+          "grammar": "entrance",
+          "at": 215.433
+        },
+        {
+          "target": "eye",
+          "grammar": "reveal",
+          "at": 217.835
+        },
+        {
+          "target": "eye",
+          "grammar": "impact",
+          "at": 216.525
+        },
+        {
+          "target": "33 ms",
+          "grammar": "impact",
+          "at": 216.525
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 215.433
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 216.525
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 217.835
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s45",
+      "tStart": 219.8,
+      "tEnd": 224.933,
+      "role": "callback",
+      "narration": "所以，下次按下快门，你可以想一想：那一刻，照片还不存在。",
+      "isFactual": false,
+      "citations": [],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.09,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "照片还不存在",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 223.393
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "bayer",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 219.8
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 220.313
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 219.8
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 220.108
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 220.313
+        }
+      ],
+      "transitionIn": {
+        "type": "mask_reveal"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s46",
+      "tStart": 224.933,
+      "tEnd": 228.767,
+      "role": "callback",
+      "narration": "四个摄像头拍下的，只是一堆会骗人的格子。",
+      "isFactual": false,
+      "citations": [],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "会骗人的格子",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 227.042
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "plate",
+          "component": "RawFramePlate",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "mode": "guess",
+            "cells": 8,
+            "y": 1000
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "plate",
+          "grammar": "entrance",
+          "at": 224.933
+        },
+        {
+          "target": "plate",
+          "grammar": "reveal",
+          "at": 225.508
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 224.933
+        },
+        {
+          "sfx": "ui_tick",
+          "at": 225.163
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 225.508
+        }
+      ],
+      "transitionIn": {
+        "type": "cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s47",
+      "tStart": 228.767,
+      "tEnd": 235.667,
+      "role": "callback",
+      "narration": "是ISP在几十毫秒里，替你猜出了颜色，擦掉了噪点，认出了光，保住了天空。",
+      "isFactual": true,
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.04,
+        "easing": "easeOutExpo"
+      },
+      "typography": [],
+      "visualObjects": [
+        {
+          "id": "caps",
+          "component": "PipelineFlythrough",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "stages": [
+              "猜出颜色",
+              "擦掉噪点",
+              "认出光",
+              "保住天空"
+            ],
+            "focus": -1,
+            "top": 420,
+            "budget": false,
+            "perStage": 1.035,
+            "runDelay": 1.777
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "caps",
+          "grammar": "entrance",
+          "at": 228.767
+        },
+        {
+          "target": "caps",
+          "grammar": "reveal",
+          "at": 231.044
+        },
+        {
+          "target": "caps",
+          "grammar": "impact",
+          "at": 235.253
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 228.767
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 231.044
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 235.253
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    },
+    {
+      "id": "s48",
+      "tStart": 235.667,
+      "tEnd": 238.467,
+      "role": "callback",
+      "narration": "照片，是算出来的。",
+      "isFactual": false,
+      "citations": [],
+      "styleProfile": "cartoon-tech-v2",
+      "assetStyle": "toon_2_5d",
+      "renderQuality": "standard",
+      "cameraProjection": "orthographic",
+      "depthLayers": 3,
+      "camera": {
+        "move": "pull_out",
+        "from": 1.06,
+        "to": 1.0,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "是算出来的",
+          "style": "headline",
+          "safeArea": "top",
+          "at": 236.787
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "rain",
+          "component": "ParticleStream",
+          "renderer": "svg",
+          "depth": 0,
+          "props": {
+            "mode": "photons",
+            "count": 40,
+            "seed": 1
+          }
+        },
+        {
+          "id": "lens",
+          "component": "LensArray",
+          "renderer": "svg",
+          "depth": 1,
+          "props": {
+            "count": 4,
+            "y": 1040
+          }
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "lens",
+          "grammar": "entrance",
+          "at": 235.667
+        },
+        {
+          "target": "lens",
+          "grammar": "reveal",
+          "at": 236.087
+        },
+        {
+          "target": "lens",
+          "grammar": "impact",
+          "at": 236.787
+        },
+        {
+          "target": "是算出来的",
+          "grammar": "impact",
+          "at": 236.787
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "whoosh",
+          "at": 235.667
+        },
+        {
+          "sfx": "digital_blip",
+          "at": 236.087
+        },
+        {
+          "sfx": "bass_hit",
+          "at": 236.787
+        }
+      ],
+      "transitionIn": {
+        "type": "match_cut"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "svg",
+        "frameCritical": false
+      }
+    }
+  ]
+}

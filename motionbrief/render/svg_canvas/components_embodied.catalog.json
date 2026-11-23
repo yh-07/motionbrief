@@ -1,0 +1,35 @@
+{
+  "RobotBody": {
+    "use": "A friendly violet/teal humanoid robot (about 700 px tall, centred) that shows how a robot's brain, skills or training data get into its body. Pick the mode that matches the story beat.",
+    "props": {
+      "mode": "brain_drop (a glowing pink brain falls from the top into the robot's head on reveal; the visor lights up on impact) | lag (the head glows bright while the arms tremble stiffly and the robot leans; on reveal three tall walls rise in front of it, impact = walls land) | cards (small cards fly from the edges into the head one by one after reveal; the head glows more with each) | puzzle (three jigsaw pieces slide together from three sides and lock into the chest; a check mark on impact) | fleet (2-5 different robots in a row, single arm, dual arm and a four-legged dog, linked by light beams; each has a skill bar that rises after reveal)",
+      "items": "list of 1-5 short Chinese labels for cards mode (default [\"杯子\",\"毛巾\",\"门把手\"]) or puzzle mode (default [\"常识\",\"手感\",\"练习\"], 3 items)",
+      "walls": "list of up to 3 short Chinese labels for lag mode (default [\"数据\",\"动作\",\"练习\"])",
+      "count": "fleet mode only: number of robots, integer 2-5 (default 3)"
+    },
+    "beats": "reveal starts the change (brain falls, walls rise, cards fly, pieces slide in, skill bars rise). impact lands it (visor lights, walls land, check mark pops, squash).",
+    "topic": "robotics"
+  },
+  "Sim2Real": {
+    "use": "Simulation versus reality for sim-to-real explainers: a small room card (table, cube, lamp) drawn as a flat cyan-violet SIM wireframe and as a warm, soft-shadowed REAL room.",
+    "props": {
+      "mode": "grid (a 5x6 wall of tiny SIM rooms, each with a tiny robot arm moving out of phase; cells pop in quickly) | gap (SIM card left, REAL card right; on reveal a jagged crack opens between them with a red pill '现实差距') | randomize (one SIM room whose table colour, wall colour, lamp angle and camera tilt jump every 0.35 s, with a counter '花样 ×N' counting up) | transfer (the randomize flicker continues; on reveal a REAL room slides in; on impact a detection box snaps onto the cube with a green check and an optional error ruler) | doors (a chef walks through 4 coloured doors left to right and arrives at a normal home kitchen card on impact)",
+      "error": "transfer mode only: the error label next to the detection box (default \"1.5 cm\"; an empty string hides the ruler and label)"
+    },
+    "beats": "reveal: the crack opens (gap), the REAL room slips in (transfer), or the walk ends at the door (doors). impact: the detection box snaps on with a check (transfer), or the kitchen card pops in (doors).",
+    "topic": "robotics"
+  },
+  "DataScale": {
+    "use": "Magnitudes of robot training data as a visual: a pile of text blocks, an ocean with a cupped hand, a fleet of robots with a calendar, a world map of dots, or a slow counter.",
+    "props": {
+      "mode": "mountain (many small text-line blocks pile up into a mountain; a big number pops above it) | ocean (a wide wavy ocean on the left with a tiny cupped hand holding a little water on the right; the hand highlights on reveal) | fleet (13 identical small arm robots in two rows, with a calendar that flips through months; label '13 台 · 17 个月' is built from count and months) | map (a stylised world map; glowing dots converge into a stacked counter on reveal) | counter (a small robot arm doing a grab, and a big counter at right that goes up by 1 about every 0.8 s)",
+      "label": "big label text for mountain (default \"15T+\"), ocean (default \"15 万亿\"), map (default \"100 万+ 条 · 22 种\"), counter (default \"网上搜不到\"). Keep it short (up to about 14 characters)",
+      "small": "ocean mode only: the small label under the hand (default \"机器人数据\")",
+      "count": "fleet mode only: number of robots (default 13)",
+      "months": "fleet mode only: the calendar flips up to this month (default 17)",
+      "start": "counter mode only: the starting integer (default 0)"
+    },
+    "beats": "mountain, ocean, map: the pile, water or dots build from entrance; reveal triggers the highlight or convergence; impact pops the label. fleet: the calendar flips from reveal to impact. counter: ticks up continuously from entrance.",
+    "topic": "robotics"
+  }
+}

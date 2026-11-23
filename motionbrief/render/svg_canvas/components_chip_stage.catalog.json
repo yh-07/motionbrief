@@ -1,0 +1,32 @@
+{
+  "PhoneSoc": {
+    "landscape": true,
+    "use": "16:9 phone with a centred SoC chip; inside it a blue NPU, outside it an orange LPDDR memory block linked by a thin line. Starts as the whole phone and zooms into the SoC and NPU. Use to show where the NPU sits on the chip and how it reaches memory.",
+    "props": {
+      "mode": "soc_zoom (only mode)",
+      "zoom": "0..1, zooms from the whole phone into the SoC and NPU"
+    },
+    "beats": "reveal: zoom continues into the SoC",
+    "topic": "general"
+  },
+  "MatrixArray": {
+    "landscape": true,
+    "use": "16:9 matrix compute view. prefill: two 8x8 blue matrices multiply into a third, with a COMPUTE tag (compute-bound, cells sweep in a wave). decode: a column vector times a wide orange weight block, with green data packets streaming in from MEMORY (memory-bound). Use prefill for the compute stage and decode for the token-by-token memory stage.",
+    "props": {
+      "mode": "prefill | decode",
+      "label": "short label above, <= 12 chars"
+    },
+    "beats": "none required; animates by itself",
+    "topic": "general"
+  },
+  "ModelShrink": {
+    "landscape": true,
+    "use": "16:9 green 7B model block made of parameter tiles, labelled 7B with its size, inside a fixed orange memory bar. Lower precision makes the block physically shorter, so it fits the memory space. Use to show quantisation (FP16 to INT8 to INT4) shrinking the model.",
+    "props": {
+      "mode": "shrink (only mode)",
+      "bits": "16 | 8 | 4, model block shrinks to that precision (16 = FP16 14 GB, 8 = INT8 7 GB, 4 = INT4 3.5 GB)"
+    },
+    "beats": "reveal: block eases to the bits value over 0.6 s",
+    "topic": "general"
+  }
+}

@@ -1,0 +1,21 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+permissions: { contents: read }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: System deps (ffmpeg, cairo, CJK font, espeak-ng)
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg libcairo2 fonts-noto-cjk espeak-ng
+      - run: pip install -e .[dev]
+      - name: Schema is generated from models (no drift)
+        run: motionbrief export-schema --check
+      - name: Fixture VALID
+        run: motionbrief validate fixtures/isp_v01.json
+      - name: Unit + render-smoke + s03 acceptance
+        run: pytest -q

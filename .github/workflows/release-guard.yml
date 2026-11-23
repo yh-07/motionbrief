@@ -1,0 +1,42 @@
+name: release-guard
+# Fail-fast public-release gate. Any failure blocks the PR.
+on:
+  pull_request:
+  push: { branches: [main] }
+permissions: { contents: read }
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # full history for secret scanning
+      # 1) secrets in tree + history
+      - uses: gitleaks/gitleaks-action@v2
+        env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install pillow
+      # 2) sensitive-term scan — real denylist is a CI secret, never committed
+      - name: Sensitive terms + public-artifact + .env + SPDX + EXIF
+        env: { MB_DENYLIST: "${{ secrets.MB_DENYLIST }}" }
+        run: python tools/sanitize/sensitive_scan.py --root . --checks all --history
+      # 3) license / SPDX of dependencies
+      - name: Dependency licenses
+        run: |
+          pip install -e . pip-licenses
+          pip-licenses --fail-on="GNU General Public License v3 (GPLv3);GNU Affero General Public License v3;GPL-3.0-only;AGPL-3.0-only"
+      # 4) dependency vulnerabilities
+      - uses: anchore/scan-action@v4
+        with: { path: ".", fail-build: true, severity-cutoff: high }
+      # 5) metadata / EXIF scrub check on committed media
+      - name: EXIF must be empty
+        run: |
+          sudo apt-get update && sudo apt-get install -y libimage-exiftool-perl
+          ! git ls-files '*.png' '*.jpg' '*.jpeg' '*.webp' | xargs -r exiftool -q -if '$EXIF:all' -p '$FileName has EXIF' | grep .
+      # 6) schema / unit / render smoke
+      - name: Tests
+        run: |
+          sudo apt-get install -y ffmpeg libcairo2 fonts-noto-cjk espeak-ng
+          pip install -e .[dev]
+          motionbrief export-schema --check
+          pytest -q

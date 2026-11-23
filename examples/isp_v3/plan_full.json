@@ -1,0 +1,1930 @@
+{
+ "video": {
+  "id": "isp_v3_full",
+  "title": "你手机的四个摄像头，没有一个会拍照：讲清 ISP"
+ },
+ "shots": [
+  {
+   "id": "s01",
+   "role": "hook",
+   "narration": "你手机背后有四个摄像头。可没有一个，拍得出照片。",
+   "citations": [
+    "Image_processor",
+    "Camera_phone"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "拍不出照片？",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "rain",
+     "component": "ParticleStream",
+     "depth": 0,
+     "renderer": "svg",
+     "props": {
+      "mode": "photons",
+      "count": 40,
+      "seed": 1
+     }
+    },
+    {
+     "id": "lens",
+     "component": "LensArray",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "count": 4,
+      "y": 1040
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.18,
+    "imp": 0.6,
+    "exit": 0.5
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ],
+   "camera": [
+    "push_in",
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "id": "s02",
+   "role": "hook",
+   "narration": "你相册里每一张照片，都不是拍下来的，是算出来的。",
+   "citations": [
+    "Computational_photography"
+   ],
+   "transition": "zoom_through",
+   "texts": [
+    {
+     "text": "是算出来的",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "guess",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.2,
+    "imp": 0.64
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s03",
+   "role": "context",
+   "narration": "不信？我们把手机的处理全部关掉，直接看传感器交出来的东西。",
+   "citations": [
+    "Raw_image_format"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "不信？",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "raw",
+      "cells": 8,
+      "y": 1040
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.45,
+    "imp": null
+   },
+   "cues": [
+    "blip"
+   ]
+  },
+  {
+   "id": "s04",
+   "role": "context",
+   "narration": "就是这个：又暗，又灰，还发绿，凑近一看，全是格子。",
+   "citations": [
+    "Raw_image_format",
+    "Bayer_filter"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "暗 · 灰 · 发绿",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "bayer",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.55,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ],
+   "camera": [
+    "push_in",
+    1.0,
+    1.14
+   ]
+  },
+  {
+   "id": "s05",
+   "role": "context",
+   "narration": "这叫RAW，传感器最原始的读数。",
+   "citations": [
+    "Raw_image_format"
+   ],
+   "transition": "zoom_through",
+   "texts": [],
+   "objects": [
+    {
+     "id": "raw",
+     "component": "TitleCard",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "text": "RAW",
+      "style": "impact_reveal",
+      "anchor": "center",
+      "sub": "传感器最原始的读数"
+     }
+    }
+   ],
+   "beats": {
+    "rev": null,
+    "imp": 0.15
+   },
+   "cues": [
+    "bass"
+   ]
+  },
+  {
+   "id": "s06",
+   "role": "context",
+   "narration": "为什么是这样？因为传感器是个色盲。",
+   "citations": [
+    "Image_sensor"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "色盲",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "rain",
+     "component": "ParticleStream",
+     "depth": 0,
+     "renderer": "svg",
+     "props": {
+      "mode": "photons",
+      "count": 40,
+      "seed": 1
+     }
+    },
+    {
+     "id": "guide",
+     "component": "PhotonGuide",
+     "depth": 2,
+     "renderer": "svg",
+     "props": {
+      "keys": [
+       [
+        0.0,
+        540,
+        160,
+        1.0
+       ],
+       [
+        0.3,
+        540,
+        1000,
+        1.5
+       ],
+       [
+        1.0,
+        540,
+        980,
+        1.5
+       ]
+      ],
+      "moods": [
+       [
+        0.0,
+        "happy"
+       ],
+       [
+        0.55,
+        "worried"
+       ]
+      ]
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.62
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ],
+   "target": "guide"
+  },
+  {
+   "id": "s07",
+   "role": "mechanism",
+   "narration": "每个像素就是一口小井，光子掉进来，变成电荷，它只会数：掉进来多少个。",
+   "citations": [
+    "Image_sensor"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "只会数光子",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wells",
+     "component": "PhotonWell",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "count",
+      "y": 880
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.45,
+    "imp": 0.82
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s08",
+   "role": "mechanism",
+   "narration": "至于光是什么颜色，它完全不知道。",
+   "citations": [
+    "Image_sensor",
+    "Bayer_filter"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "不知道颜色",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wells",
+     "component": "PhotonWell",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "gray",
+      "y": 880
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.35,
+    "imp": 0.7
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s09",
+   "role": "mechanism",
+   "narration": "工程师的办法是，给每个像素戴上一片彩色眼镜：红、绿、蓝，每个像素只能戴一种。",
+   "citations": [
+    "Bayer_filter"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "每个像素 只戴一种",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wells",
+     "component": "PhotonWell",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "filter",
+      "y": 880
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.8
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s10",
+   "role": "mechanism",
+   "narration": "而且绿色占了一半，因为人眼对绿光最敏感。",
+   "citations": [
+    "Bayer_filter"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "绿色占一半",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "bayer",
+      "cells": 8,
+      "y": 900
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.2,
+    "imp": 0.62
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s11",
+   "role": "reveal",
+   "narration": "这就意味着：每个像素都只知道一种颜色，另外两种，它根本没见过。",
+   "citations": [
+    "Bayer_filter",
+    "Demosaicing"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "只知道 1 种颜色",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "guess",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.12,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s12",
+   "role": "reveal",
+   "narration": "你照片里三分之二的颜色，是算出来的。",
+   "citations": [
+    "Demosaicing"
+   ],
+   "transition": "zoom_through",
+   "texts": [],
+   "objects": [
+    {
+     "id": "big",
+     "component": "TitleCard",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "text": "2/3",
+      "style": "impact_reveal",
+      "anchor": "center",
+      "sub": "的颜色 · 是算出来的"
+     }
+    },
+    {
+     "id": "guide",
+     "component": "PhotonGuide",
+     "depth": 2,
+     "renderer": "svg",
+     "props": {
+      "keys": [
+       [
+        0.0,
+        260,
+        1500,
+        0.9
+       ],
+       [
+        1.0,
+        280,
+        1480,
+        0.9
+       ]
+      ],
+      "moods": [
+       [
+        0.0,
+        "surprised"
+       ]
+      ],
+      "look": [
+       1,
+       -1
+      ]
+     }
+    }
+   ],
+   "beats": {
+    "rev": null,
+    "imp": 0.12
+   },
+   "cues": [
+    "bass"
+   ],
+   "prePause": 0.3
+  },
+  {
+   "id": "s13",
+   "role": "reveal",
+   "narration": "负责算的，是手机芯片里一块专用电路，叫ISP，图像信号处理器。",
+   "citations": [
+    "Image_processor"
+   ],
+   "transition": "zoom_through",
+   "texts": [
+    {
+     "text": "ISP",
+     "style": "impact_reveal",
+     "anchor": "center"
+    }
+   ],
+   "objects": [
+    {
+     "id": "stream",
+     "component": "ParticleStream",
+     "depth": 0,
+     "renderer": "svg",
+     "props": {
+      "mode": "converge",
+      "count": 70,
+      "seed": 13
+     }
+    },
+    {
+     "id": "chip",
+     "component": "ChipReveal",
+     "depth": 1,
+     "renderer": "three",
+     "props": {
+      "label": ""
+     }
+    }
+   ],
+   "beats": {
+    "ent": 0.05,
+    "rev": 0.3,
+    "imp": 0.55
+   },
+   "cues": [
+    "riser",
+    "bass"
+   ],
+   "hero": true,
+   "target": "chip"
+  },
+  {
+   "id": "s14",
+   "role": "context",
+   "narration": "它要把这堆格子变成照片，得连闯四关。",
+   "citations": [
+    "Image_processor"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "连闯四关",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "pipe",
+     "component": "PipelineFlythrough",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "stages": [
+       "去马赛克",
+       "降噪",
+       "白平衡",
+       "色调映射"
+      ],
+      "focus": -1,
+      "top": 560,
+      "budget": false,
+      "perStage": 0.5
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.2,
+    "imp": 0.8
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s15",
+   "role": "context",
+   "narration": "而且顺序不能乱：前一关留下的错，后面会被一路放大。",
+   "citations": [
+    "Image_processor"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "错误会一路放大",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "pipe",
+     "component": "PipelineFlythrough",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "stages": [
+       "去马赛克",
+       "降噪",
+       "白平衡",
+       "色调映射"
+      ],
+      "focus": -1,
+      "top": 580,
+      "budget": false,
+      "perStage": 0.62,
+      "error": true
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.25,
+    "imp": 0.82
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s16",
+   "role": "mechanism",
+   "narration": "第一关，去马赛克。一个红色像素缺绿和蓝，怎么办？",
+   "citations": [
+    "Demosaicing"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "① 去马赛克",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "nb",
+     "component": "NeighborGrid",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "ask",
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.5,
+    "imp": null
+   },
+   "cues": [
+    "tick"
+   ]
+  },
+  {
+   "id": "s17",
+   "role": "mechanism",
+   "narration": "看邻居。上下左右都是绿的，取个平均，就猜出了绿色。",
+   "citations": [
+    "Demosaicing"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "看邻居 · 取平均",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "nb",
+     "component": "NeighborGrid",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "average",
+      "y": 920
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.75
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s18",
+   "role": "mechanism",
+   "narration": "平坦的地方，这招很灵。",
+   "citations": [
+    "Demosaicing"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "平坦处 · 很灵",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "demosaic",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.15,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s19",
+   "role": "mechanism",
+   "narration": "可一遇到栅栏、衬衫格子这种又细又密的纹理，邻居就会骗你，画面上冒出一道道彩虹纹。",
+   "citations": [
+    "Demosaicing",
+    "Moiré_pattern"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "彩虹纹",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "fence",
+     "component": "MoireFence",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "artifact",
+      "y": 980
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.55,
+    "imp": 0.82
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s20",
+   "role": "mechanism",
+   "narration": "所以好的算法，得先判断边缘朝哪个方向，再顺着边去猜。",
+   "citations": [
+    "Demosaicing"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "顺着边缘猜",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "fence",
+     "component": "MoireFence",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "fix",
+      "y": 980
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.25,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s21",
+   "role": "mechanism",
+   "narration": "第二关，降噪。光不是一股水流，而是一粒一粒随机掉下来的。",
+   "citations": [
+    "Shot_noise"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "② 降噪",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "bars",
+     "component": "PhotonBars",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "stream"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.5,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s22",
+   "role": "mechanism",
+   "narration": "白天光子多，这点随机性看不出来。",
+   "citations": [
+    "Shot_noise"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "白天：光子多",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "bars",
+     "component": "PhotonBars",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "day"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.5,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s23",
+   "role": "mechanism",
+   "narration": "到了夜里，每个像素只接到很少的光子，多一个少一个就是明显的差别，画面上全是彩色噪点。",
+   "citations": [
+    "Shot_noise",
+    "Image_noise"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "满屏噪点",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "bars",
+     "component": "PhotonBars",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "night"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.72
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s24",
+   "role": "mechanism",
+   "narration": "硬抹？细节一起被抹掉。",
+   "citations": [
+    "Noise_reduction"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "细节没了",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "burst",
+     "component": "BurstStack",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "smear"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.18,
+    "imp": 0.8
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s25",
+   "role": "mechanism",
+   "narration": "手机的办法是：连拍一串，逐张对齐，再叠在一起。",
+   "citations": [
+    "Computational_photography"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "连拍 · 对齐 · 叠加",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "burst",
+     "component": "BurstStack",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "align"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.15,
+    "imp": null
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s26",
+   "role": "mechanism",
+   "narration": "随机的噪点会互相抵消，真实的画面会越叠越清楚。",
+   "citations": [
+    "Shot_noise"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "噪点互相抵消",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "burst",
+     "component": "BurstStack",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "stack"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.12,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s27",
+   "role": "payoff",
+   "narration": "叠四张，噪点降一半；叠十六张，降到四分之一。",
+   "citations": [
+    "Shot_noise"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "16 张 → 1/4",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "burst",
+     "component": "BurstStack",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "milestones"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.1,
+    "imp": 0.85
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s28",
+   "role": "payoff",
+   "narration": "你夜里按快门要稳住一两秒，就是在等它拍完这一串。",
+   "citations": [
+    "Computational_photography"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "等它拍完这一串",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "burst",
+     "component": "BurstStack",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "shutter",
+      "y": 760
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.12,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s29",
+   "role": "mechanism",
+   "narration": "第三关，白平衡。同一张白纸，在烛光下是橙的，在阴天是蓝的。",
+   "citations": [
+    "Color_balance",
+    "Color_temperature"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "③ 白平衡",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wb",
+     "component": "WBCompare",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "temps",
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.6,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s30",
+   "role": "mechanism",
+   "narration": "你的大脑会自动纠正，你永远觉得它是白的。可传感器不会。",
+   "citations": [
+    "Color_constancy"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "大脑会自动纠正",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wb",
+     "component": "WBCompare",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "brain",
+      "y": 1010
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.2,
+    "imp": 0.78
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s31",
+   "role": "mechanism",
+   "narration": "ISP必须从画面里猜：现在是什么光？然后把白纸改回白色。",
+   "citations": [
+    "Color_balance"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "猜出光源",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wb",
+     "component": "ColorSweep",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "white_balance",
+      "from": "#FF9A3C",
+      "to": "#FFFFFF"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.45,
+    "imp": 0.85
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s32",
+   "role": "mechanism",
+   "narration": "猜错了，人脸发黄，雪地发蓝。",
+   "citations": [
+    "Color_balance"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "黄脸 · 蓝雪",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wb",
+     "component": "WBCompare",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "wrong",
+      "y": 980
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.15,
+    "imp": 0.78
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s33",
+   "role": "mechanism",
+   "narration": "夜里最难，因为光源五颜六色，有的手机已经开始用训练过的模型来猜。",
+   "citations": [
+    "Color_balance"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "AI 来猜光源",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "wb",
+     "component": "WBCompare",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "night",
+      "y": 1020
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.55,
+    "imp": 0.88
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s34",
+   "role": "mechanism",
+   "narration": "第四关，色调映射。传感器能分出几千级亮度，可JPEG每个颜色只有二百五十六级。",
+   "citations": [
+    "Tone_mapping",
+    "Color_depth"
+   ],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "④ 色调映射",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "tl",
+     "component": "ToneLadder",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "squeeze"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.5,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s35",
+   "role": "mechanism",
+   "narration": "几千级要压进二百五十六级，怎么压？平均压，暗部全黑，天空一片死白。",
+   "citations": [
+    "Tone_mapping"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "天空死白",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "tc",
+     "component": "ToneCard",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "crush"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.5,
+    "imp": 0.8
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s36",
+   "role": "mechanism",
+   "narration": "人眼对暗处更敏感，所以要给暗部多分一点台阶，亮部少分一点。",
+   "citations": [
+    "Gamma_correction"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "暗部多分台阶",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "tl",
+     "component": "ToneLadder",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "spacing"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.4,
+    "imp": 0.85
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s37",
+   "role": "mechanism",
+   "narration": "有的手机更聪明：拍的时候故意拍暗一点，先保住天空，再把暗处提亮。",
+   "citations": [
+    "High-dynamic-range_imaging",
+    "Tone_mapping"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "先拍暗 · 再提亮",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "tc",
+     "component": "ToneCard",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "lift"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.6,
+    "imp": 0.88
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s38",
+   "role": "payoff",
+   "narration": "这就是你照片里，天空和人脸能同时看清的原因。",
+   "citations": [
+    "Tone_mapping"
+   ],
+   "transition": "morph_fuse",
+   "texts": [
+    {
+     "text": "亮暗都清楚",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "hdr",
+     "component": "ExposureMerge",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {}
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.75
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s39",
+   "role": "reveal",
+   "narration": "四关闯完，还没结束。最大的难题是：你有四个摄像头。",
+   "citations": [
+    "Camera_phone"
+   ],
+   "transition": "zoom_through",
+   "texts": [
+    {
+     "text": "4 个摄像头",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "rain",
+     "component": "ParticleStream",
+     "depth": 0,
+     "renderer": "svg",
+     "props": {
+      "mode": "photons",
+      "count": 40,
+      "seed": 1
+     }
+    },
+    {
+     "id": "lens",
+     "component": "LensArray",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "count": 4,
+      "y": 1040
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.55,
+    "imp": 0.75
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ],
+   "camera": [
+    "push_in",
+    1.0,
+    1.1
+   ],
+   "prePause": 0.3
+  },
+  {
+   "id": "s40",
+   "role": "mechanism",
+   "narration": "每颗镜头的传感器不一样，镜片不一样，颜色脾气也不一样。",
+   "citations": [
+    "Camera_phone"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "四颗镜头 · 四种脾气",
+     "style": "label",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "zs",
+     "component": "ZoomSwitch",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "grid"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.4,
+    "imp": 0.82
+   },
+   "cues": [
+    "tick",
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s41",
+   "role": "mechanism",
+   "narration": "你从零点六倍拉到五倍，画面在三颗镜头之间切换，颜色要是跳一下，你立刻就会发现。",
+   "citations": [
+    "Camera_phone"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "颜色跳了",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "zs",
+     "component": "ZoomSwitch",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "zoom"
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.88
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s42",
+   "role": "payoff",
+   "narration": "所以有的芯片干脆让三套ISP同时开着，三颗摄像头一直在后台待命，你一拉变焦，直接切过去。",
+   "citations": [
+    "Image_processor"
+   ],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "三套 ISP",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "tri",
+     "component": "TripleISP",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {}
+    }
+   ],
+   "beats": {
+    "rev": 0.4,
+    "imp": 0.2
+   },
+   "cues": [
+    "bass",
+    "blip"
+   ]
+  },
+  {
+   "id": "s43",
+   "role": "payoff",
+   "narration": "还有时间。拍四K视频，每秒三十帧，这台流水线每秒要处理两亿多个像素。",
+   "citations": [
+    "4K_resolution",
+    "Frame_rate"
+   ],
+   "transition": "zoom_through",
+   "texts": [
+    {
+     "text": "2 亿+ 像素/秒",
+     "style": "headline",
+     "anchor": "lower"
+    }
+   ],
+   "objects": [
+    {
+     "id": "pipe",
+     "component": "PipelineFlythrough",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "stages": [
+       "去马赛克",
+       "降噪",
+       "白平衡",
+       "色调映射"
+      ],
+      "focus": -1,
+      "top": 380,
+      "budget": true,
+      "perStage": {
+       "spanFrac": 0.09,
+       "offset": 0.0
+      }
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.3,
+    "imp": 0.74
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ],
+   "camera": [
+    "pan",
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "id": "s44",
+   "role": "payoff",
+   "narration": "每一帧，只有三十三毫秒，比你眨一次眼还快好几倍。",
+   "citations": [
+    "Frame_rate",
+    "Blinking"
+   ],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "33 ms",
+     "style": "headline",
+     "anchor": "top"
+    },
+    {
+     "text": "眨眼 ≈ 100–400 ms",
+     "style": "label",
+     "anchor": "lower"
+    }
+   ],
+   "objects": [
+    {
+     "id": "eye",
+     "component": "EyeBlinkFrames",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "frames": 12
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.55,
+    "imp": 0.25
+   },
+   "cues": [
+    "bass",
+    "blip"
+   ]
+  },
+  {
+   "id": "s45",
+   "role": "callback",
+   "narration": "所以，下次按下快门，你可以想一想：那一刻，照片还不存在。",
+   "citations": [],
+   "transition": "mask_reveal",
+   "texts": [
+    {
+     "text": "照片还不存在",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "bayer",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.1,
+    "imp": null,
+    "text_at": 0.7
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ],
+   "camera": [
+    "push_in",
+    1.0,
+    1.09
+   ]
+  },
+  {
+   "id": "s46",
+   "role": "callback",
+   "narration": "四个摄像头拍下的，只是一堆会骗人的格子。",
+   "citations": [],
+   "transition": "cut",
+   "texts": [
+    {
+     "text": "会骗人的格子",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "plate",
+     "component": "RawFramePlate",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "mode": "guess",
+      "cells": 8,
+      "y": 1000
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.15,
+    "imp": null,
+    "text_at": 0.55
+   },
+   "cues": [
+    "tick",
+    "blip"
+   ]
+  },
+  {
+   "id": "s47",
+   "role": "callback",
+   "narration": "是ISP在几十毫秒里，替你猜出了颜色，擦掉了噪点，认出了光，保住了天空。",
+   "citations": [
+    "Image_processor"
+   ],
+   "transition": "match_cut",
+   "texts": [],
+   "objects": [
+    {
+     "id": "caps",
+     "component": "PipelineFlythrough",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "stages": [
+       "猜出颜色",
+       "擦掉噪点",
+       "认出光",
+       "保住天空"
+      ],
+      "focus": -1,
+      "top": 420,
+      "budget": false,
+      "perStage": {
+       "spanFrac": 0.15,
+       "offset": 0.0
+      },
+      "runDelay": {
+       "spanFrac": 0.33,
+       "offset": -0.5
+      }
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.33,
+    "imp": 0.94
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ]
+  },
+  {
+   "id": "s48",
+   "role": "callback",
+   "narration": "照片，是算出来的。",
+   "citations": [],
+   "transition": "match_cut",
+   "texts": [
+    {
+     "text": "是算出来的",
+     "style": "headline",
+     "anchor": "top"
+    }
+   ],
+   "objects": [
+    {
+     "id": "rain",
+     "component": "ParticleStream",
+     "depth": 0,
+     "renderer": "svg",
+     "props": {
+      "mode": "photons",
+      "count": 40,
+      "seed": 1
+     }
+    },
+    {
+     "id": "lens",
+     "component": "LensArray",
+     "depth": 1,
+     "renderer": "svg",
+     "props": {
+      "count": 4,
+      "y": 1040
+     }
+    }
+   ],
+   "beats": {
+    "rev": 0.15,
+    "imp": 0.4
+   },
+   "cues": [
+    "blip",
+    "bass"
+   ],
+   "camera": [
+    "pull_out",
+    1.06,
+    1.0
+   ],
+   "prePause": 0.3
+  }
+ ]
+}

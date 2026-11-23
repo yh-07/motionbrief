@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionbrief.invalid/schemas/result.schema.json",
+  "title": "MotionBrief local-agent task result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["taskId", "status", "artifacts", "metrics", "logsRef", "error"],
+  "properties": {
+    "taskId": {"type": "string"},
+    "status": {"enum": ["ok", "retryable", "degraded", "escalate", "fatal"]},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "metrics": {"type": "object"},
+    "logsRef": {"type": "string"},
+    "error": {"type": ["object", "null"],
+              "properties": {"kind": {"type": "string"}, "message": {"type": "string"}, "attempts": {"type": "integer"}}},
+    "skipped": {"type": "boolean"},
+    "degradations": {"type": "array", "items": {"type": "object"}}
+  }
+}

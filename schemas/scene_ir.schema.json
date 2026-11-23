@@ -1,0 +1,686 @@
+{
+  "$defs": {
+    "Camera": {
+      "additionalProperties": false,
+      "properties": {
+        "move": {
+          "default": "static",
+          "enum": [
+            "push_in",
+            "pull_out",
+            "pan",
+            "static",
+            "orbit"
+          ],
+          "title": "Move",
+          "type": "string"
+        },
+        "from": {
+          "default": 1.0,
+          "maximum": 2.0,
+          "minimum": 0.5,
+          "title": "From",
+          "type": "number"
+        },
+        "to": {
+          "default": 1.0,
+          "maximum": 2.0,
+          "minimum": 0.5,
+          "title": "To",
+          "type": "number"
+        },
+        "easing": {
+          "default": "easeOutExpo",
+          "title": "Easing",
+          "type": "string"
+        }
+      },
+      "title": "Camera",
+      "type": "object"
+    },
+    "MaterialStyle": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "toon",
+          "enum": [
+            "toon",
+            "flat"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "bands": {
+          "default": 3,
+          "title": "Bands",
+          "type": "integer"
+        },
+        "gradientRamp": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Gradientramp",
+          "type": "array"
+        }
+      },
+      "title": "MaterialStyle",
+      "type": "object"
+    },
+    "MotionBeat": {
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "grammar": {
+          "enum": [
+            "entrance",
+            "reveal",
+            "impact",
+            "exit"
+          ],
+          "title": "Grammar",
+          "type": "string"
+        },
+        "at": {
+          "title": "At",
+          "type": "number"
+        }
+      },
+      "required": [
+        "target",
+        "grammar",
+        "at"
+      ],
+      "title": "MotionBeat",
+      "type": "object"
+    },
+    "Outline": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "default": "svg_stroke",
+          "enum": [
+            "inverted_hull",
+            "depth_normal",
+            "svg_stroke"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "width": {
+          "default": 0.05,
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "number"
+        },
+        "color": {
+          "default": "#000",
+          "title": "Color",
+          "type": "string"
+        }
+      },
+      "title": "Outline",
+      "type": "object"
+    },
+    "Palette": {
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 2,
+          "minItems": 1,
+          "title": "Primary",
+          "type": "array"
+        },
+        "accent": {
+          "title": "Accent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "primary",
+        "accent"
+      ],
+      "title": "Palette",
+      "type": "object"
+    },
+    "RendererHints": {
+      "additionalProperties": false,
+      "properties": {
+        "webglFallback": {
+          "default": "svg",
+          "enum": [
+            "canvas2d",
+            "svg",
+            "static"
+          ],
+          "title": "Webglfallback",
+          "type": "string"
+        },
+        "frameCritical": {
+          "default": false,
+          "title": "Framecritical",
+          "type": "boolean"
+        }
+      },
+      "title": "RendererHints",
+      "type": "object"
+    },
+    "Scene": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^s\\d{2,3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "tStart": {
+          "minimum": 0,
+          "title": "Tstart",
+          "type": "number"
+        },
+        "tEnd": {
+          "exclusiveMinimum": 0,
+          "title": "Tend",
+          "type": "number"
+        },
+        "role": {
+          "enum": [
+            "hook",
+            "context",
+            "reveal",
+            "mechanism",
+            "payoff",
+            "callback"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "durationTier": {
+          "anyOf": [
+            {
+              "enum": [
+                "micro",
+                "core",
+                "deep",
+                "extended",
+                "longform"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Durationtier"
+        },
+        "chapter": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Chapter"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        },
+        "narration": {
+          "default": "",
+          "title": "Narration",
+          "type": "string"
+        },
+        "isFactual": {
+          "default": true,
+          "title": "Isfactual",
+          "type": "boolean"
+        },
+        "citations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "styleProfile": {
+          "default": "cartoon-tech-v2",
+          "enum": [
+            "cartoon-tech-v1",
+            "cartoon-tech-v2"
+          ],
+          "title": "Styleprofile",
+          "type": "string"
+        },
+        "assetStyle": {
+          "default": "flat_vector",
+          "enum": [
+            "flat_vector",
+            "toon_2_5d",
+            "toon_3d",
+            "blender_cel"
+          ],
+          "title": "Assetstyle",
+          "type": "string"
+        },
+        "renderQuality": {
+          "default": "standard",
+          "enum": [
+            "fast",
+            "standard",
+            "hero"
+          ],
+          "title": "Renderquality",
+          "type": "string"
+        },
+        "cameraProjection": {
+          "default": "orthographic",
+          "enum": [
+            "orthographic",
+            "perspective"
+          ],
+          "title": "Cameraprojection",
+          "type": "string"
+        },
+        "depthLayers": {
+          "default": 3,
+          "maximum": 3,
+          "minimum": 1,
+          "title": "Depthlayers",
+          "type": "integer"
+        },
+        "camera": {
+          "$ref": "#/$defs/Camera"
+        },
+        "typography": {
+          "items": {
+            "$ref": "#/$defs/Typography"
+          },
+          "title": "Typography",
+          "type": "array"
+        },
+        "visualObjects": {
+          "items": {
+            "$ref": "#/$defs/VisualObject"
+          },
+          "minItems": 1,
+          "title": "Visualobjects",
+          "type": "array"
+        },
+        "motionGrammar": {
+          "items": {
+            "$ref": "#/$defs/MotionBeat"
+          },
+          "title": "Motiongrammar",
+          "type": "array"
+        },
+        "soundCues": {
+          "items": {
+            "$ref": "#/$defs/SoundCue"
+          },
+          "title": "Soundcues",
+          "type": "array"
+        },
+        "transitionIn": {
+          "$ref": "#/$defs/TransitionIn"
+        },
+        "fallback2D": {
+          "default": true,
+          "title": "Fallback2D",
+          "type": "boolean"
+        },
+        "rendererHints": {
+          "$ref": "#/$defs/RendererHints"
+        }
+      },
+      "required": [
+        "id",
+        "tStart",
+        "tEnd",
+        "role",
+        "visualObjects"
+      ],
+      "title": "Scene",
+      "type": "object"
+    },
+    "SoundCue": {
+      "additionalProperties": false,
+      "properties": {
+        "sfx": {
+          "enum": [
+            "bass_hit",
+            "whoosh",
+            "ui_tick",
+            "riser",
+            "shutter",
+            "digital_blip"
+          ],
+          "title": "Sfx",
+          "type": "string"
+        },
+        "at": {
+          "title": "At",
+          "type": "number"
+        },
+        "gainDb": {
+          "default": 0.0,
+          "maximum": 6,
+          "minimum": -24,
+          "title": "Gaindb",
+          "type": "number"
+        }
+      },
+      "required": [
+        "sfx",
+        "at"
+      ],
+      "title": "SoundCue",
+      "type": "object"
+    },
+    "TransitionIn": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "default": "cut",
+          "enum": [
+            "cut",
+            "zoom_through",
+            "mask_reveal",
+            "whip",
+            "match_cut",
+            "morph_fuse"
+          ],
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "title": "TransitionIn",
+      "type": "object"
+    },
+    "Typography": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 24,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "style": {
+          "default": "headline",
+          "title": "Style",
+          "type": "string"
+        },
+        "safeArea": {
+          "default": "center",
+          "enum": [
+            "top",
+            "center",
+            "lower"
+          ],
+          "title": "Safearea",
+          "type": "string"
+        },
+        "at": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "At"
+        },
+        "until": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Until"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Typography",
+      "type": "object"
+    },
+    "Video": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z0-9_\\-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "aspect": {
+          "default": "9:16",
+          "enum": [
+            "9:16",
+            "16:9"
+          ],
+          "title": "Aspect",
+          "type": "string"
+        },
+        "w": {
+          "default": 1080,
+          "title": "W",
+          "type": "integer"
+        },
+        "h": {
+          "default": 1920,
+          "title": "H",
+          "type": "integer"
+        },
+        "fps": {
+          "const": 30,
+          "default": 30,
+          "title": "Fps",
+          "type": "integer"
+        },
+        "visualIP": {
+          "default": "cartoon-tech-v2",
+          "enum": [
+            "cartoon-tech-v1",
+            "cartoon-tech-v2"
+          ],
+          "title": "Visualip",
+          "type": "string"
+        },
+        "durationTier": {
+          "default": "core",
+          "enum": [
+            "micro",
+            "core",
+            "deep",
+            "extended",
+            "longform"
+          ],
+          "title": "Durationtier",
+          "type": "string"
+        },
+        "productionLevel": {
+          "default": "standard",
+          "enum": [
+            "hero",
+            "standard",
+            "fast"
+          ],
+          "title": "Productionlevel",
+          "type": "string"
+        },
+        "chapterCards": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Chaptercards"
+        },
+        "visualStyle": {
+          "default": "neon",
+          "enum": [
+            "neon",
+            "cartoon",
+            "ink",
+            "graphite"
+          ],
+          "title": "Visualstyle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "title": "Video",
+      "type": "object"
+    },
+    "VisualObject": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "component": {
+          "title": "Component",
+          "type": "string"
+        },
+        "renderer": {
+          "default": "svg",
+          "enum": [
+            "remotion",
+            "three",
+            "svg",
+            "canvas",
+            "blender"
+          ],
+          "title": "Renderer",
+          "type": "string"
+        },
+        "props": {
+          "additionalProperties": true,
+          "title": "Props",
+          "type": "object"
+        },
+        "depth": {
+          "default": 1,
+          "maximum": 2,
+          "minimum": 0,
+          "title": "Depth",
+          "type": "integer"
+        },
+        "materialStyle": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MaterialStyle"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "outline": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Outline"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "lightingPreset": {
+          "anyOf": [
+            {
+              "enum": [
+                "single_key_soft",
+                "single_key_hard",
+                "flat"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lightingpreset"
+        }
+      },
+      "required": [
+        "id",
+        "component"
+      ],
+      "title": "VisualObject",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "irVersion": {
+      "const": "1.2.0",
+      "title": "Irversion",
+      "type": "string"
+    },
+    "video": {
+      "$ref": "#/$defs/Video"
+    },
+    "palette": {
+      "$ref": "#/$defs/Palette"
+    },
+    "scenes": {
+      "items": {
+        "$ref": "#/$defs/Scene"
+      },
+      "minItems": 1,
+      "title": "Scenes",
+      "type": "array"
+    }
+  },
+  "required": [
+    "irVersion",
+    "video",
+    "palette",
+    "scenes"
+  ],
+  "title": "MotionBrief Scene IR v1.2.0",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionbrief.invalid/schemas/scene_ir.schema.json"
+}

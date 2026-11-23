@@ -1,0 +1,28 @@
+work/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+tools/sanitize/denylist.local.txt
+stores/metrics_db/*.sqlite
+stores/fact_db/facts.jsonl
+*.egg-info/
+outbox/
+inbox/_processed/
+inbox/_processing/
+.claude/settings.local.json
+# inputs drafted per video (scripts, handoffs, shot lists, images): kept out of the repo
+inbox/*
+!inbox/README.md
+!inbox/TEMPLATE*.md
+# per-video IR written by runs; the tests only use the fixtures listed below
+fixtures/*
+!fixtures/isp_v01.json
+!fixtures/isp_v02.json
+!fixtures/isp_v3_full.json
+!fixtures/isp_v3_trailer.json
+!fixtures/legacy_v1_1_s03.json

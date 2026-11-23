@@ -1,0 +1,32 @@
+# Provider-neutral capability routing. Business code calls ONLY capability names.
+# Model references are "<provider>:<model>" and MUST come from ${ENV} placeholders —
+# no real model IDs are committed to this repo.
+providers:
+  openai_compat:
+    family: ${MB_FAMILY_A:-family_a}
+    base_url: ${MB_OPENAI_COMPAT_BASE_URL:-REPLACE_ME}
+    api_key: ${MB_OPENAI_COMPAT_API_KEY:-REPLACE_ME}
+  anthropic:
+    family: ${MB_FAMILY_B:-family_b}
+    api_key: ${MB_ANTHROPIC_API_KEY:-REPLACE_ME}
+  local:
+    family: local
+    base_url: ${MB_LOCAL_BASE_URL:-http://127.0.0.1:8080/v1}
+  stub:
+    family: stub
+
+capabilities:
+  fast_text:
+    candidates: ["openai_compat:${MB_FAST_TEXT_MODEL:-REPLACE_ME}", "local:${MB_LOCAL_MODEL:-REPLACE_ME}", "stub:echo"]
+    timeout_s: 30
+  deep_reasoning:
+    candidates: ["anthropic:${MB_DEEP_MODEL:-REPLACE_ME}", "openai_compat:${MB_DEEP_MODEL_ALT:-REPLACE_ME}", "stub:echo"]
+    timeout_s: 180
+  code_generation:
+    candidates: ["anthropic:${MB_CODE_MODEL:-REPLACE_ME}", "openai_compat:${MB_CODE_MODEL_ALT:-REPLACE_ME}", "stub:echo"]
+    timeout_s: 180
+  vision_review:
+    candidates: ["openai_compat:${MB_VISION_MODEL:-REPLACE_ME}", "anthropic:${MB_VISION_MODEL_ALT:-REPLACE_ME}", "stub:echo"]
+    timeout_s: 120
+    cross_family: true   # G2 four-eye: reviewer family must differ from the author family
+ban: []                  # e.g. ["openai_compat:some-model"] to disable a candidate globally

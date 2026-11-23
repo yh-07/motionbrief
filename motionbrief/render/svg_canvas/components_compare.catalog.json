@@ -1,0 +1,38 @@
+{
+  "SplitCompare": {
+    "use": "16:9 two-sided contrast of one memory or bandwidth figure against another. pipes: two panels side by side, each with a memory block (orange) and a compute block (blue) joined by a data pipe; the left pipe is a narrow 2-lane pipe where packets queue, the right pipe is much wider (ratio times the lanes) and flows freely. panels: two big value cards side by side (title, big value, sub). Use pipes to show that one side is bandwidth-starved and the other is wide; use panels to compare two headline numbers.",
+    "props": {
+      "mode": "pipes (left narrow vs right wide data pipe) | panels (two value panels)",
+      "left": "{title, value, sub, color} for the left panel; color is blue | orange | green | red | gray",
+      "right": "{title, value, sub, color} for the right panel; color is blue | orange | green | red | gray",
+      "ratio": "right pipe width / left, pipes only (default 8, right gets round(2*ratio) lanes, max 24)"
+    },
+    "beats": "reveal: right side highlighted (yellow border; in panels mode the right card also scales up 4 %)",
+    "topic": "general",
+    "landscape": true
+  },
+  "HBars": {
+    "use": "16:9 horizontal bar chart of up to 6 labelled values, bars grow one after another from the left. Use to compare sizes, capacities or speeds across a few options (for example model size per quantisation level, or memory per precision). One row can be highlighted as the answer.",
+    "props": {
+      "mode": "bars (only mode)",
+      "items": "list of up to 6 {label (str), value (number), text (str shown at bar end, default value plus unit), color (blue | orange | green | red | gray, default green)}",
+      "unit": "str appended to the default bar-end text, for example GB",
+      "highlight": "row index to highlight (default -1 for given items; with no items prop the default is 2)",
+      "note": "short caption at the top right, 30 px"
+    },
+    "beats": "reveal: highlighted bar gets a yellow outline and the others dim to 45 %; impact: highlighted bar pulses once",
+    "topic": "general",
+    "landscape": true
+  },
+  "ChipTags": {
+    "use": "16:9 chip die diagram with labels attached to places on the chip: an NPU block, Cache and MC blocks inside the die, and an orange LPDDR block outside its right edge. Tags pop in one at a time, each linked by a leader line to its own point on the die, so they read as annotations of the chip, not as a list. Use to name the parts or features of an accelerator or SoC (KV cache, runtime, kernel, power, thermal) and to show which parts are involved.",
+    "props": {
+      "mode": "tags (only mode)",
+      "tags": "list of up to 8 short labels, default [KV Cache, Cache 命中率, Runtime, Kernel, 功耗, 散热]",
+      "emphasis": "index of the tag to highlight with a yellow border on impact (default -1 = none)"
+    },
+    "beats": "reveal: the first tag appears (later tags 0.45 s apart); impact: the emphasis tag border turns yellow",
+    "topic": "general",
+    "landscape": true
+  }
+}

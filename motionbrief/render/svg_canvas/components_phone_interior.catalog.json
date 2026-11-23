@@ -1,0 +1,25 @@
+{
+  "BusCongestion": {
+    "landscape": true,
+    "use": "Shows a data-bound memory bottleneck: LPDDR feeds a narrow bus into a large NPU; packets queue at the bus entrance; the NPU idles. Use for the memory-wall reveal.",
+    "props": {
+      "mode": "congestion (only mode)",
+      "flow": "0..1, fraction of NPU cells lit (the data-fed part); 0.25 = mostly idle NPU",
+      "queue": "int 0..8, packets waiting at the bus entrance",
+      "label": "optional short text (max 10 characters) above LPDDR"
+    },
+    "beats": "reveal: congestion grows (queue fills up); impact: idle NPU cells flash red",
+    "topic": "general"
+  },
+  "NpuArray": {
+    "landscape": true,
+    "use": "Shows a large NPU compute array working, to convey 100 TOPS.",
+    "props": {
+      "mode": "array (only mode)",
+      "load": "0..1, fraction of compute cells active (waves of light across the array)",
+      "label": "short text above the array, default 100 TOPS"
+    },
+    "beats": "impact: label pops",
+    "topic": "general"
+  }
+}

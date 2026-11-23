@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://motionbrief.invalid/schemas/task.schema.json",
+  "title": "MotionBrief local-agent task manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskId",
+    "type",
+    "idempotencyKey",
+    "irRef",
+    "outDir"
+  ],
+  "properties": {
+    "taskId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_\\-.]+$"
+    },
+    "type": {
+      "enum": [
+        "tts_narration",
+        "render_scene",
+        "mix_audio",
+        "assemble",
+        "qa_g1"
+      ]
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "minLength": 8
+    },
+    "irRef": {
+      "type": "string",
+      "description": "repo-relative path to a Scene IR json"
+    },
+    "sceneId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^s\\d{2,3}$"
+    },
+    "renderer": {
+      "enum": [
+        "auto",
+        "svg",
+        "canvas",
+        "remotion",
+        "three",
+        "blender"
+      ],
+      "default": "auto"
+    },
+    "cmd": {
+      "type": "object",
+      "description": "Allow-listed action arguments. NEVER a shell string.",
+      "additionalProperties": false,
+      "properties": {
+        "pngEvery": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 300
+        },
+        "maxFrames": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "voice": {
+          "type": "string"
+        },
+        "worker": {
+          "type": "string",
+          "enum": [
+            "local",
+            "remote"
+          ],
+          "description": "where render_scene runs; remote = MOTIONBRIEF_RENDER_HOST, falls back to local if unreachable"
+        },
+        "segment": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "render_scene: render only slice k of n of the scene's frames ([k, n])"
+        },
+        "segments": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000,
+          "description": "render_scene: join n previously rendered slices (falls back to a full render if any is missing)"
+        }
+      }
+    },
+    "retries": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5,
+      "default": 2
+    },
+    "degrade": {
+      "type": "boolean",
+      "default": true
+    },
+    "checkpoint": {
+      "type": "boolean",
+      "default": true
+    },
+    "outDir": {
+      "type": "string"
+    }
+  }
+}

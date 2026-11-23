@@ -1,0 +1,3 @@
+# Example only. The REAL denylist is injected via MB_DENYLIST (CI secret) or a gitignored local file.
+example-codename-alpha
+example-internal-project

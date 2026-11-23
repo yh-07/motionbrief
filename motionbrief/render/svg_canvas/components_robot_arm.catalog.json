@@ -1,0 +1,14 @@
+{
+  "RobotArm": {
+    "use": "Recurring robotics prop: a friendly side-view industrial robot arm (violet body, teal joints, amber lights) on a table, handling a light-teal towel. Choose the mode that matches the story beat: failing grab, human vs robot comparison, repeated practice, stretching to an out-of-reach object, knocking a cup over, or a clean folding success.",
+    "props": {
+      "mode": "fail (robot pinches a towel corner, lifts, the towel slips and drops into a crumpled heap, red X on impact) | compare (left: robot failing at 0.7 scale; right: a human hand folds the towel in half easily; X near the robot, check near the hand on impact) | practice (repeating grab-lift-drop cycles every 1.2 s, towel goes up and falls back, pill counter top-right shows the attempt number) | reach (arm stretches toward an object on a high shelf; if reachable it grips and lifts it with a check, otherwise it stops short with a dashed gap and a red X) | crash (arm swings fast and knocks a mug over on reveal, sparks and small parts fly, spinning stopwatch top-right, red X on impact) | success (arm folds the towel in half on reveal, a second fold before impact, the folded towel glows and a green check lands) | idle (arm slowly opens and closes its gripper, no marks; for a title background)",
+      "object": "reach only: sponge (yellow block, default) | cup (white mug) | stone (grey pebble)",
+      "reachable": "reach only: true = the object is in reach and gets gripped and lifted (check); false (default) = out of reach, arm stops short (dashed gap, red X)",
+      "start": "practice only: attempt number shown on the counter at the start, integer, default 1",
+      "y": "table top y in px, default 1150; keep the table and arm inside y 480-1400"
+    },
+    "beats": "reveal: fail = the pinch closes and the lift starts, then the towel slips out and falls; compare = the hand starts folding; practice = none (cycles repeat); reach = the arm reaches toward the object; crash = the arm hits the cup and it falls over; success = the first fold happens. impact: the red X (fail, reach not reachable, crash) or green check (compare hand side, success, reach reachable) pops in, and the fallen towel heap appears (fail) or the folded towel glows (success).",
+    "topic": "robotics"
+  }
+}

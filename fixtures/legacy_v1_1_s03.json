@@ -1,0 +1,85 @@
+{
+  "irVersion": "1.1.0",
+  "video": {
+    "id": "isp_v01",
+    "aspect": "9:16",
+    "w": 1080,
+    "h": 1920,
+    "fps": 30,
+    "visualIP": "cartoon-tech-v1"
+  },
+  "scenes": [
+    {
+      "id": "s03",
+      "tStart": 9,
+      "tEnd": 15,
+      "role": "reveal",
+      "durationTier": "core",
+      "narration": "真正把光变成照片的，是 ISP。",
+      "citations": [
+        "https://en.wikipedia.org/wiki/Image_processor"
+      ],
+      "styleProfile": "cartoon-tech-v1",
+      "assetStyle": "toon_3d",
+      "renderQuality": "hero",
+      "cameraProjection": "perspective",
+      "depthLayers": 3,
+      "camera": {
+        "move": "push_in",
+        "from": 1.0,
+        "to": 1.06,
+        "easing": "easeOutExpo"
+      },
+      "typography": [
+        {
+          "text": "ISP",
+          "style": "impact_reveal",
+          "safeArea": "center"
+        }
+      ],
+      "visualObjects": [
+        {
+          "id": "chip",
+          "component": "ChipReveal",
+          "renderer": "three",
+          "materialStyle": {
+            "type": "toon",
+            "bands": 3,
+            "gradientRamp": [
+              "#EFE6FF",
+              "#8E7BFF",
+              "#2A2350"
+            ]
+          },
+          "outline": {
+            "method": "inverted_hull",
+            "width": 0.05,
+            "color": "#000"
+          },
+          "lightingPreset": "single_key_soft"
+        }
+      ],
+      "motionGrammar": [
+        {
+          "target": "chip",
+          "grammar": "impact",
+          "at": 13.0
+        }
+      ],
+      "soundCues": [
+        {
+          "sfx": "bass_hit",
+          "at": 13.0
+        }
+      ],
+      "transitionIn": {
+        "type": "zoom_through"
+      },
+      "fallback2D": true,
+      "rendererHints": {
+        "webglFallback": "canvas2d",
+        "frameCritical": true
+      }
+    }
+  ]
+}
